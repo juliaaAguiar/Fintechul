@@ -1,9 +1,7 @@
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #f7f7f7;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  color: #5a5a5a;
 }
 
 .navbar-brand {
@@ -54,33 +52,6 @@ h1 {
 
 .list-group-item h2 {
     font-size: 1.5em;
-}
-
-.list-group-item .btn {
-    font-size: 1.2em;
-}
-
-.list-group-item .crcle {
-    display: flex;
-    align-items: center;
-}
-
-.list-group-item .circle {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
-    background-color: #007bff;
-    border-radius: 50%;
-    display: inline-block;
-}
-
-.list-group-item .circle-empty {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
-    background-color: #ccc;
-    border-radius: 50%;
-    display: inline-block;
 }
 
 .list-group-item .btn {
