@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="images/logo.png">
-    <link rel="stylesheet" href="css/index.css" type="text/css">
+    <link rel="icon" href="resources/images/logo.png">
+    <link rel="stylesheet" href="resources/css/index.css" type="text/css">
 
     <title>Fintech</title>
 
@@ -31,7 +31,7 @@
               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Receita/Despesa</a>
+              <a class="nav-link" href="cadastrarDespesa.jsp">Receita/Despesa</a>
             </li>
             <li class="nav-item">
               <a class="nav-link disabled" href="listaAtivo.jsp">Investimento</a>
@@ -61,7 +61,7 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="first-slide" src="images/organizacao.jpg">
+            <img class="first-slide" src="resources/images/organizacao.jpg">
             <div class="container">
               <div class="carousel-caption text-left">
                 <h1>Simplifique suas finanças com a Fintech.</h1>
@@ -70,7 +70,7 @@
             </div>
           </div>
           <div class="carousel-item">
-            <img class="second-slide" src="images/simpli.jpg" class="responsive" alt="Second slide">
+            <img class="second-slide" src="resources/images/simpli.jpg" class="responsive" alt="Second slide">
             <div class="container">
               <div class="carousel-caption">
                 <h1>Aqui organize de forma facil sua vida financeira.</h1>
@@ -79,7 +79,7 @@
             </div>
           </div>
           <div class="carousel-item">
-            <img class="third-slide" src="images/investimento.jpg" class="responsive" alt="Third slide">
+            <img class="third-slide" src="resources/images/investimento.jpg" class="responsive" alt="Third slide">
             <div class="container">
               <div class="carousel-caption text-right">
                 <h1>Explore oportunidades de investimento na nossa plataforma!.</h1>
