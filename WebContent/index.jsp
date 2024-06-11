@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
+<head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="pt-BR">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="images/logo.png">
-	<link rel="stylesheet" href="css/NewFile.css" type="text/css">
+    <link rel="stylesheet" href="css/index.css" type="text/css">
 
     <title>Fintech</title>
 
@@ -15,7 +16,7 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <!-- Estilos personalizados -->
-  </head>
+</head>
   <body>
 
     <header>
@@ -33,10 +34,13 @@
               <a class="nav-link" href="#">Receita/Despesa</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="#">Investimento</a>
+              <a class="nav-link disabled" href="listaAtivo.jsp">Investimento</a>
             </li>
             <li class="nav-item">
               <a class="nav-link disabled" href="#">Conta</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="ajuda.jsp">Ajuda</a>
             </li>
           </ul>
           <form class="form-inline mt-2 mt-md-0">
