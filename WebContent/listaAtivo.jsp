@@ -25,6 +25,7 @@
     </header>
 
     <main role="main">
+    	<button type="button" class="custom-button">Acessar meus Investimentos</button>
         <div class="container mt-5 pt-5">
             <h1 class="text-center mb-4">Investimentos</h1>
             <div class="list-group">

@@ -4,6 +4,25 @@ body {
   color: #5a5a5a;
 }
 
+.custom-button {
+    position: fixed;
+    top: 95px; 
+    right: 20px; 
+    z-index: 1000; 
+    width: 150px; 
+    height: 60px;
+    font-size: 16px; 
+    padding: 5px 10px; 
+    background-color: #5a5a5a;
+    color: #fff; 
+    border: none; 
+    border-radius: 5px;
+}
+
+.custom-button:hover {
+    background-color: #0056b3; /* Mudar a cor de fundo ao passar o mouse */
+}
+
 .container {
     margin-top: 60px;
     padding: 20px;
