@@ -6,13 +6,13 @@ body {
 
 .main-head{
     height: 150px;
-    background: #5a5a5a;;
+    background: #5a5a5a;
    
 }
 
 .sidenav {
     height: 100%;
-    background-color: #5a5a5a;;
+    background-color: #5a5a5a;
     overflow-x: hidden;
     padding-top: 20px;
 }
@@ -20,6 +20,22 @@ body {
 
 .main {
     padding: 0px 10px;
+}
+
+.custom-btn {
+    background-color: #5a5a5a;
+    border-color: #5a5a5a;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+}
+
+.custom-btn:hover {
+    background-color: #4a4a4a;
+    border-color: #4a4a4a;
 }
 
 @media screen and (max-height: 450px) {
@@ -66,10 +82,5 @@ body {
 }
 
 .login-main-text h2{
-    font-weight: 500;
-}
-
-.btn-black{
-    background-color: #000 !important;
-    color: #fff;
+    font-weight: 800;
 }

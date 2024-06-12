@@ -143,8 +143,7 @@
 
       <!-- FOOTER -->
       <footer class="container">
-        <p class="float-right"><a href="#">Voltar ao topo</a></p>
-        <p>&copy; © 2024 Fintech. Todos os direitos reservados. &middot;</p>
+        <jsp:include page="footer.jsp" />
       </footer>
     </main>
 

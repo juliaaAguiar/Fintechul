@@ -33,7 +33,7 @@
               <a class="nav-link disabled" href="listaAtivo.jsp">Investimento</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="#">Conta</a>
+              <a class="nav-link disabled" href="gerenciarConta.jsp">Conta</a>
             </li>
             <li class="nav-item">
               <a class="nav-link disabled" href="ajuda.jsp">Ajuda</a>

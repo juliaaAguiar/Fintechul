@@ -76,9 +76,8 @@
         </div>
     </main>
 
-    <footer class="container mt-5">
-        <p class="float-right"><a href="#">Voltar ao topo</a></p>
-        <p>&copy; 2024 Fintech. Todos os direitos reservados.</p>
+    <footer class="container">
+        <jsp:include page="footer.jsp" />
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
