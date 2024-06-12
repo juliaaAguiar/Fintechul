@@ -27,7 +27,7 @@
               <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="cadastrarDespesa.jsp">Receita/Despesa</a>
+              <a class="nav-link" href="cadastrarRecDes.jsp">Receita/Despesa</a>
             </li>
             <li class="nav-item">
               <a class="nav-link disabled" href="listaAtivo.jsp">Investimento</a>

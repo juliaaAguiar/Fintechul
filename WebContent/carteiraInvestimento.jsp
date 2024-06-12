@@ -7,46 +7,17 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="resources/images/logo.png">
-    <link rel="stylesheet" href="resources/css/index.css" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="resources/css/carteiraInvestimento.css" type="text/css">
+    
     <title>Fintech - Carteira de Investimentos</title>
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <a class="navbar-brand" href="#">Fintech</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.jsp">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="dashboard.jsp">Receita/Despesa</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Investimento</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Conta</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="ajuda.jsp">Ajuda</a>
-                    </li>
-                </ul>
-                <form class="form-inline mt-2 mt-md-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
-                </form>
-            </div>
-        </nav>
+       <jsp:include page="header.jsp" />
     </header>
 
     <main role="main" class="container mt-5 pt-5">

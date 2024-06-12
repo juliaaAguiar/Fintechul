@@ -4,15 +4,6 @@ body {
   color: #5a5a5a;
 }
 
-.navbar-brand {
-    font-size: 1.8em;
-    font-weight: bold;
-}
-
-.navbar-nav .nav-link {
-    font-size: 1.2em;
-}
-
 .container {
     margin-top: 60px;
     padding: 20px;
@@ -26,6 +17,24 @@ h1 {
     margin-bottom: 30px;
 }
 
+.list-group-item figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.list-group-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.list-group-item p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .list-group-item {
     margin-bottom: 20px;
     padding: 20px;
@@ -36,12 +45,7 @@ h1 {
 }
 
 .list-group-item .media {
-    display: center;
-}
-
-.list-group-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: inline-block;
 }
 
 .list-group-item h4 {
@@ -56,8 +60,36 @@ h1 {
 
 .list-group-item .btn {
     font-size: 1.2em;
-    background-color: #777;
-    border-color: #777; 
+    background-color: #5a5a5a;
+    border-color: #5a5a5a; 
+}
+
+.list-group-item:hover {
+    transform: translateY(-5px);
+    box-shadow: #5a5a5a;
+}
+
+
+.crcle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ccc; 
+    margin: 0 5px;
+}
+
+.circle-empty {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #ccc; 
+    margin: 0 5px;
 }
 
 footer {

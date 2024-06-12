@@ -20,13 +20,13 @@
        <jsp:include page="header.jsp" />
     </header>
 
-    <main role="main" class="container d-flex justify-content-center">
-        <div class="mt-5 pt-5">
-            <h1 class="text-center mb-4">Dúvidas Frequentes</h1>
-            <div class="list-group">
+    <main role="main" class="main-container">
+    <div class="mt-5 pt-5">
+        <h1 class="text-center mb-4">Dúvidas Frequentes</h1>
+        <div class="list-group">
                 <a href="#" class="list-group-item list-group-item-action">
-                    <div class="col-md-3 align-items-center">
-                        <figure class="mx-auto">
+                    <div class="align-items-center mx-auto">
+                        <figure class="justify-content-center">
                             <img class="media-object img-rounded img-responsive" src="resources/images/senha.jpg" alt="placehold.it/350x250">
                         </figure>
                     </div>
@@ -37,7 +37,7 @@
                     <button type="button" class="btn btn-primary btn-lg btn-block mt-2">Acessar</button>
                 </a>
                 <a href="#" class="list-group-item list-group-item-action">
-                    <div class="col-md-3 align-items-center">
+                    <div class="align-items-center mx-auto">
                         <figure class="mx-auto">
                             <img class="media-object img-rounded img-responsive" src="resources/images/trasnf.jpg" alt="placehold.it/350x250">
                         </figure>
@@ -49,7 +49,7 @@
                     <button type="button" class="btn btn-primary btn-lg btn-block mt-2">Acessar</button>
                 </a>
                 <a href="#" class="list-group-item list-group-item-action">
-                    <div class="col-md-3 align-items-center">
+                    <div class="align-items-center mx-auto">
                         <figure class="mx-auto">
                             <img class="media-object img-rounded img-responsive" src="resources/images/cartao.jpg" alt="placehold.it/350x250">
                         </figure>
@@ -61,7 +61,7 @@
                     <button type="button" class="btn btn-primary btn-lg btn-block mt-2">Acessar</button>
                 </a>
                 <a href="#" class="list-group-item list-group-item-action">
-                    <div class="col-md-3 align-items-center">
+                    <div class="align-items-center mx-auto">
                         <figure class="mx-auto">
                             <img class="media-object img-rounded img-responsive" src="resources/images/push.jpg" alt="placehold.it/350x250">
                         </figure>

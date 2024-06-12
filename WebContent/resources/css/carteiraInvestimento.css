@@ -27,7 +27,7 @@ h2 {
 }
 
 .table thead th {
-    background-color: #007bff;
+    background-color: #5a5a5a;
     color: white;
 }
 
@@ -44,6 +44,10 @@ h2 {
     font-size: 1.2em;
 }
 
+.navbar-dark {
+    background-color: #5a5a5a;
+}
+
 footer {
     background-color: #343a40;
     color: #fff;
@@ -54,5 +58,5 @@ footer {
 }
 
 footer a {
-    color: #007bff;
+    color: #5a5a5a;
 }
