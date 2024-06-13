@@ -47,10 +47,9 @@ public class OraclePessoaDAO implements PessoaDAO {
 		int pessoaId = -1;
 		try {
 			conexao = ConnectionManager.getInstance().getConnection();
-			String sql = "INSERT INTO t_pessoa(cd_pessoa, cd_cpf, nm_nome, tp_status) VALUES (sq_pessoa, ?, ?, ?)";
+			String sql = "INSERT INTO t_pessoa(cd_pessoa, cd_cpf, nm_nome, tp_status) VALUES (SQ_PESSOA.nextval, ?, ?, ?)";
 			String[] generatedColumns = {"cd_pessoa"};
 			statement = conexao.prepareStatement(sql, generatedColumns);
-			statement = conexao.prepareStatement(sql);
 			statement.setNString(1, pessoa.getCpf());
 			statement.setNString(2, pessoa.getNome());
 			statement.setNString(3, pessoa.getStatus());

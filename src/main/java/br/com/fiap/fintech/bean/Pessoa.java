@@ -21,6 +21,10 @@ public class Pessoa {
 		this.status = status;
 	}
 	
+	public Pessoa(int codigo) {
+		this.codigo = codigo;
+	}
+
 	public int getCodigo() {
 		return codigo;
 	}

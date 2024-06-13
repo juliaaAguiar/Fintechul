@@ -10,24 +10,27 @@ import java.util.List;
 import br.com.fiap.fintech.bean.Pessoa;
 import br.com.fiap.fintech.bean.Usuario;
 import br.com.fiap.fintech.dao.PessoaDAO;
+import br.com.fiap.fintech.dao.UsuarioDAO;
 import br.com.fiap.fintech.exception.DBException;
+import br.com.fiap.fintech.factory.DAOFactory;
 import br.com.fiap.fintech.singleton.ConnectionManager;
-public class OracleUsuarioDAO extends OraclePessoaDAO implements PessoaDAO {
+public class OracleUsuarioDAO implements UsuarioDAO {
 	private Connection conexao;
 
 	@Override
-	public void atualizar(Pessoa pessoa) throws DBException {
-		super.atualizar(pessoa);
+	public void atualizar(Usuario usuario) throws DBException {
 		PreparedStatement statement = null;
 		try {
+			PessoaDAO pessoadao = DAOFactory.getPessoaDAO();
+			pessoadao.atualizar(usuario);
 			conexao = ConnectionManager.getInstance().getConnection();
 			String sql = "UPDATE t_login SET nm_email = ?, nm_senha = ?,  nr_telefone= ?, tp_perfil = ? WHERE cd_login = ?";
 			statement = conexao.prepareStatement(sql);
-			statement.setNString(1, ((Usuario) pessoa).getEmail());
-			statement.setNString(2, ((Usuario) pessoa).getSenha());
-			statement.setNString(3, ((Usuario) pessoa).getTelefone());
-			statement.setNString(4, ((Usuario) pessoa).getPerfil());
-			statement.setInt(5, ((Usuario) pessoa).getCodigo());
+			statement.setNString(1, usuario.getEmail());
+			statement.setNString(2, usuario.getSenha());
+			statement.setNString(3, usuario.getTelefone());
+			statement.setNString(4, usuario.getPerfil());
+			statement.setInt(5, usuario.getCodigo());
 			
 			statement.executeUpdate();
 		} catch (Exception e) {
@@ -44,19 +47,18 @@ public class OracleUsuarioDAO extends OraclePessoaDAO implements PessoaDAO {
 	}
 
 	@Override
-	public int cadastrar(Pessoa pessoa) throws DBException {
+	public void cadastrar(Usuario usuario) throws DBException {
 		PreparedStatement statement = null;
-		int pessoaId;
 		try {
-			pessoaId = super.cadastrar(pessoa);
+			System.out.println(usuario.getPessoa().getCodigo());
 			conexao = ConnectionManager.getInstance().getConnection();
 			String sql = "INSERT INTO t_login(cd_login, nm_senha, nm_email, nr_telefone, tp_perfil, cd_pessoa) VALUES (sq_usuario.nextval, ?, ?, ?, ?, ?)";
 			statement = conexao.prepareStatement(sql);
-			statement.setNString(1, ((Usuario) pessoa).getSenha());
-			statement.setNString(2, ((Usuario) pessoa).getEmail());
-			statement.setNString(3, ((Usuario) pessoa).getTelefone());
-			statement.setNString(4, ((Usuario) pessoa).getPerfil());
-			statement.setInt(5, pessoaId);
+			statement.setNString(1, usuario.getSenha());
+			statement.setNString(2, usuario.getEmail());
+			statement.setNString(3, usuario.getTelefone());
+			statement.setNString(4, usuario.getPerfil());
+			statement.setInt(5, usuario.getCodigoPessoa());
 			
 			statement.executeUpdate();
 		} catch (Exception e) {
@@ -70,7 +72,6 @@ public class OracleUsuarioDAO extends OraclePessoaDAO implements PessoaDAO {
 				e.printStackTrace();
 			}
 		}
-		return 0;
 	}
 
 	@Override
@@ -133,8 +134,8 @@ public class OracleUsuarioDAO extends OraclePessoaDAO implements PessoaDAO {
 	}
 
 	@Override
-	public List<Pessoa> listar() {
-		List<Pessoa> lista = new ArrayList<Pessoa>();
+	public List<Usuario> listar() {
+		List<Usuario> lista = new ArrayList<Usuario>();
 		PreparedStatement statement = null;
 		ResultSet resultSet = null;
 		

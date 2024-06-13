@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.fiap.fintech.bean.Pessoa;
 import br.com.fiap.fintech.bean.Usuario;
 import br.com.fiap.fintech.dao.PessoaDAO;
+import br.com.fiap.fintech.dao.UsuarioDAO;
 import br.com.fiap.fintech.exception.DBException;
 import br.com.fiap.fintech.factory.DAOFactory;
 
@@ -19,7 +20,7 @@ import br.com.fiap.fintech.factory.DAOFactory;
 public class UsuarioServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	private PessoaDAO dao;
+	private UsuarioDAO dao;
 	
 	@Override
 	public void init() throws ServletException {
