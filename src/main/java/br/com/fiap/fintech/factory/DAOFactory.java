@@ -32,7 +32,7 @@ public class DAOFactory {
 		return new OracleAtivoDAO();
 	}
 	
-	public static UsuarioDAO getUsuarioDAO() {
+	public static PessoaDAO getUsuarioDAO() {
 		return new OracleUsuarioDAO();
 	}
 	
