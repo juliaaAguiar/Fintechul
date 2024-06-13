@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin-top: 30px; /* Espaçamento superior */
+}
+
+.account-info {
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.account-info img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.account-info p {
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.card-header {
+    background-color: #2C3E50;
+    color: #5a5a5a;
+    font-size: 1.25rem;
+}
+
+.card-body {
+    display: flex; /* Use flexbox para alinhar itens */
+    flex-direction: column; /* Alinhe os itens em uma coluna */
+    align-items: flex-start; /* Alinhe os itens à esquerda */
+    background-color: #f8f9fa; /* Cor de fundo */
+    border-radius: 10px; /* Borda arredondada */
+    padding: 20px; /* Espaçamento interno */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.card-body img {
+    max-width: 100%; /* Imagem responsiva */
+    height: auto;
+    margin: 0 auto 20px; /* Centralize a imagem horizontalmente e adicione espaçamento inferior */
+}
+
+.card-body p {
+    margin-bottom: 10px; /* Espaçamento inferior */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+.card-body strong {
+    font-weight: bold; /* Texto em negrito */
+    color: #2C3E50; /* Cor do texto */
+}
+.table {
+    margin-bottom: 20px;
+}
+
+.table thead th {
+    background-color: #5a5a5a;
+    color: white;
+}
+
+.table tbody tr {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.table tbody tr:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.btn {
+    background-color: #3498DB;
+    color: white;
+    border: none;
+}
+
+.btn:hover {
+    background-color: #2980B9;
+}
