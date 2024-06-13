@@ -1,13 +1,6 @@
-body {
-    font-family: "Lato", sans-serif;
-}
-
-
-
-.main-head{
+.main-head {
     height: 150px;
     background: #5a5a5a;
-   
 }
 
 .sidenav {
@@ -16,7 +9,6 @@ body {
     overflow-x: hidden;
     padding-top: 20px;
 }
-
 
 .main {
     padding: 0px 10px;
@@ -36,6 +28,24 @@ body {
 .custom-btn:hover {
     background-color: #4a4a4a;
     border-color: #4a4a4a;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.logo-img {
+    width: 25px; 
+    height: auto;
+    margin-right: 10px;
+}
+
+.login-main-text h2 {
+    font-weight: 800;
+    margin: 0;
+    line-height: 1; 
 }
 
 @media screen and (max-height: 450px) {
@@ -66,7 +76,7 @@ body {
     }
 
     .login-form{
-        margin-top: 80%;
+        margin-top: 50%; 
     }
 
     .register-form{
@@ -74,13 +84,13 @@ body {
     }
 }
 
-
-.login-main-text{
+.login-main-text {
     margin-top: 20%;
     padding: 60px;
     color: #fff;
 }
 
-.login-main-text h2{
+.login-main-text h2 {
     font-weight: 800;
+    margin: 0; 
 }
