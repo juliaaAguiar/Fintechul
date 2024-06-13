@@ -18,11 +18,11 @@
     </header>
 
     <main role="main">
-        <button type="button" class="custom-button" style="background-color: #5a5a5a; border-color: #5a5a5a; color: white; cursor: pointer;">Acessar meus Investimentos</button>
+        <a href="carteiraInvestimento.jsp" type="button" class="custom-button" style="background-color: #5a5a5a; border-color: #5a5a5a; color: white; cursor: pointer;">Acessar meus Investimentos</a>
         <div class="container mt-5 pt-5">
             <h1 class="text-center mb-4">Investimentos</h1>
             <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <a class="list-group-item list-group-item-action flex-column align-items-start">
                     <div class="d-flex w-100 justify-content-between">
                         <h4 class="mb-1">Renda Fixa</h4>
                         <h2>420 <small>ativos disponíveis</small></h2>

@@ -47,16 +47,3 @@ h2 {
 .navbar-dark {
     background-color: #5a5a5a;
 }
-
-footer {
-    background-color: #343a40;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    margin-top: 20px;
-    border-radius: 8px;
-}
-
-footer a {
-    color: #5a5a5a;
-}

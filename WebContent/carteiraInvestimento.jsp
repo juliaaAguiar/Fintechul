@@ -22,35 +22,71 @@
 
     <main role="main" class="container mt-5 pt-5">
         <h1 class="text-center mb-4">Carteira de Investimentos</h1>
-        <h2 class="text-center mb-4">Total Investido: R$ 100.000,00</h2>
+        <h2 class="text-center mb-4" style="background-color: #f0f0f0; padding: 10px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">Total Investido: R$ 100.000,00</h2>
         <div class="row">
             <div class="col-md-8">
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>Inicio</th>
+                            <th>Aquisição</th>
                             <th>Tipo</th>
-                            <th>Término</th>
-                            <th>Valor Investido</th>
-                            <th>Retorno</th>
+                            <th>Quantidade</th>
+                            <th>Valor Ind.</th>
+                            <th>Valor Inv.</th>
+                            <th>Alterar</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>10/06/2024</td>
                             <td>Renda Fixa</td>
-                            <td>10</td>
+                            <td>2</td>
                             <td>R$ 1.000,00</td>
-                            <td>1%</td>
+                            <td>2.000,00</td>
+							<td>
+                                <button type="button" class="btn btn-info btn-sm">Alterar</button>
+                            </td>
                         </tr>
                         <tr>
                             <td>05/06/2024</td>
                             <td>Fundos Imobiliários</td>
                             <td>5</td>
-                            <td>R$ 2.500,00</td>
-                            <td>2.5%</td>
+                            <td>R$ 500,00</td>
+                            <td>2.500,00</td>
+                            <td>
+                                <button type="button" class="btn btn-info btn-sm">Alterar</button>
+                            </td>
                         </tr>
-                        <!-- Adicione mais linhas conforme necessário -->
+                        <tr>
+                            <td>05/06/2024</td>
+                            <td>Tesouro Direto</td>
+                            <td>2%</td>
+                            <td>R$ 100,00</td>
+                            <td>2.500,00</td>
+                            <td>
+                                <button type="button" class="btn btn-info btn-sm">Alterar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>05/06/2024</td>
+                            <td>Ações</td>
+                            <td>2</td>
+                            <td>R$ 3.500,00</td>
+                            <td>7.500,00</td>
+                            <td>
+                                <button type="button" class="btn btn-info btn-sm">Alterar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>05/06/2024</td>
+                            <td>Fundos de Investimento</td>
+                            <td>15</td>
+                            <td>R$ 90,00</td>
+                            <td>1.350,00</td>
+                            <td>
+                                <button type="button" class="btn btn-info btn-sm">Alterar</button>
+                            </td>
+                        </tr>	
                     </tbody>
                 </table>
             </div>
@@ -61,23 +97,23 @@
                         <ul class="list-group">
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 Renda Fixa
-                                <span class="badge badge-primary badge-pill">40%</span>
+                                <span class="badge badge-primary badge-pill">13,03%</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 Fundos Imobiliários
-                                <span class="badge badge-primary badge-pill">20%</span>
+                                <span class="badge badge-primary badge-pill">16,30%</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 Tesouro Direto
-                                <span class="badge badge-primary badge-pill">25%</span>
+                                <span class="badge badge-primary badge-pill">16,30%</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 Ações
-                                <span class="badge badge-primary badge-pill">10%</span>
+                                <span class="badge badge-primary badge-pill">45,58%</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 Fundos de Investimento
-                                <span class="badge badge-primary badge-pill">5%</span>
+                                <span class="badge badge-primary badge-pill">8,79%</span>
                             </li>
                         </ul>
                     </div>
@@ -102,3 +138,4 @@
 </body>
 
 </html>
+	
