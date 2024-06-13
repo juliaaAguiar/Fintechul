@@ -1,0 +1,13 @@
+.cad {
+  height: 5px;
+  border-top: 0;
+  background: #c4e17f;
+  border-radius: 5px;
+  border-top: 1px solid #5a5a5a;
+    color: #5a5a5a;
+}
+
+.btn:focus {
+            outline: none !important;
+            box-shadow: none !important;
+        }

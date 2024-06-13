@@ -1,7 +1,7 @@
 body {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  color: #5a5a5a;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    color: #5a5a5a;
 }
 
 .navbar-brand {
@@ -52,23 +52,4 @@ h1 {
 
 .list-group-item h2 {
     font-size: 1.5em;
-}
-
-.list-group-item .btn {
-    font-size: 1.2em;
-    background-color: #777;
-    border-color: #777; 
-}
-
-footer {
-    background-color: #343a40;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    margin-top: 20px;
-    border-radius: 8px;
-}
-
-footer a {
-    color: #007bff;
 }
