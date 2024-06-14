@@ -10,12 +10,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+<<<<<<< HEAD
 import br.com.fiap.fintech.bean.Ativo;
 import br.com.fiap.fintech.dao.AtivoDAO;
 import br.com.fiap.fintech.exception.DBException;
 import br.com.fiap.fintech.factory.DAOFactory;
 
 @WebServlet("/AtivoServlet")
+=======
+@WebServlet("/ativo")
+>>>>>>> c1c582d6fbd2dc22fe519e2a9f10ed60edc8f5e9
 public class AtivoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -80,6 +84,7 @@ public class AtivoServlet extends HttpServlet {
 		}
 
 	}
+<<<<<<< HEAD
 
 	private void cadastrar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -146,3 +151,6 @@ public class AtivoServlet extends HttpServlet {
 }	
 	
 	
+=======
+}
+>>>>>>> c1c582d6fbd2dc22fe519e2a9f10ed60edc8f5e9

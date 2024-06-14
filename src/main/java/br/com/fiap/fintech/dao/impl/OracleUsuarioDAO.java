@@ -7,11 +7,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.fiap.fintech.bean.Pessoa;
 import br.com.fiap.fintech.bean.Usuario;
+import br.com.fiap.fintech.dao.PessoaDAO;
 import br.com.fiap.fintech.dao.UsuarioDAO;
 import br.com.fiap.fintech.exception.DBException;
+import br.com.fiap.fintech.factory.DAOFactory;
 import br.com.fiap.fintech.singleton.ConnectionManager;
-
 public class OracleUsuarioDAO implements UsuarioDAO {
 	private Connection conexao;
 
@@ -19,6 +21,8 @@ public class OracleUsuarioDAO implements UsuarioDAO {
 	public void atualizar(Usuario usuario) throws DBException {
 		PreparedStatement statement = null;
 		try {
+			PessoaDAO pessoadao = DAOFactory.getPessoaDAO();
+			pessoadao.atualizar(usuario);
 			conexao = ConnectionManager.getInstance().getConnection();
 			String sql = "UPDATE t_login SET nm_email = ?, nm_senha = ?,  nr_telefone= ?, tp_perfil = ? WHERE cd_login = ?";
 			statement = conexao.prepareStatement(sql);
@@ -46,14 +50,15 @@ public class OracleUsuarioDAO implements UsuarioDAO {
 	public void cadastrar(Usuario usuario) throws DBException {
 		PreparedStatement statement = null;
 		try {
+			System.out.println(usuario.getPessoa().getCodigo());
 			conexao = ConnectionManager.getInstance().getConnection();
-			String sql = "INSERT INTO t_login(cd_login, nm_senha, nm_email, nr_telefone, tp_perfil, cd_cpf) VALUES (sq_usuario.nextval, ?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO t_login(cd_login, nm_senha, nm_email, nr_telefone, tp_perfil, cd_pessoa) VALUES (sq_usuario.nextval, ?, ?, ?, ?, ?)";
 			statement = conexao.prepareStatement(sql);
 			statement.setNString(1, usuario.getSenha());
 			statement.setNString(2, usuario.getEmail());
 			statement.setNString(3, usuario.getTelefone());
 			statement.setNString(4, usuario.getPerfil());
-			statement.setDouble(5, usuario.getPessoa().getCpf());
+			statement.setInt(5, usuario.getCodigoPessoa());
 			
 			statement.executeUpdate();
 		} catch (Exception e) {
@@ -106,7 +111,7 @@ public class OracleUsuarioDAO implements UsuarioDAO {
 			
 			if (resultSet.next()) {
 				int codigo = resultSet.getInt("cd_login");
-				int codigo_pessoa = resultSet.getInt("cd_cpf");
+				int codigo_pessoa = resultSet.getInt("cd_pessoa");
 				String email = resultSet.getNString("nm_email");
 				String senha = resultSet.getNString("nm_senha");
 				String perfil = resultSet.getNString("tp_perfil");
@@ -141,7 +146,7 @@ public class OracleUsuarioDAO implements UsuarioDAO {
 			
 			while (resultSet.next()) {
 				int codigo = resultSet.getInt("cd_login");
-				int codigo_pessoa = resultSet.getInt("cd_cpf");
+				int codigo_pessoa = resultSet.getInt("cd_pessoa");
 				String email = resultSet.getNString("nm_email");
 				String senha = resultSet.getNString("nm_senha");
 				String perfil = resultSet.getNString("tp_perfil");

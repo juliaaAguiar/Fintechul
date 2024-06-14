@@ -20,11 +20,11 @@ public class OraclePessoaDAO implements PessoaDAO {
 		PreparedStatement statement = null;
 		try {
 			conexao = ConnectionManager.getInstance().getConnection();
-			String sql = "Update t_pessoa SET nm_nome = ?, tp_status = ? WHERE cd_cpf = ?";
+			String sql = "Update t_pessoa SET nm_nome = ?, tp_status = ? WHERE cd_pessoa = ?";
 			statement = conexao.prepareStatement(sql);
 			statement.setNString(1, pessoa.getNome());
 			statement.setNString(2, pessoa.getStatus());
-			statement.setDouble(3, pessoa.getCpf());
+			statement.setInt(3, pessoa.getCodigo());
 			
 			statement.executeUpdate();
 		} catch (Exception e) {
@@ -41,17 +41,24 @@ public class OraclePessoaDAO implements PessoaDAO {
 	}
 
 	@Override
-	public void cadastrar(Pessoa pessoa) throws DBException {
+	public int cadastrar(Pessoa pessoa) throws DBException {
 		PreparedStatement statement = null;
+		ResultSet resultSet = null;
+		int pessoaId = -1;
 		try {
 			conexao = ConnectionManager.getInstance().getConnection();
-			String sql = "INSERT INTO t_pessoa(cd_cpf, nm_nome, tp_status) VALUES (?, ?, ?)";
-			statement = conexao.prepareStatement(sql);
-			statement.setDouble(1, pessoa.getCpf());
+			String sql = "INSERT INTO t_pessoa(cd_pessoa, cd_cpf, nm_nome, tp_status) VALUES (SQ_PESSOA.nextval, ?, ?, ?)";
+			String[] generatedColumns = {"cd_pessoa"};
+			statement = conexao.prepareStatement(sql, generatedColumns);
+			statement.setNString(1, pessoa.getCpf());
 			statement.setNString(2, pessoa.getNome());
 			statement.setNString(3, pessoa.getStatus());
 			
 			statement.executeUpdate();
+			resultSet = statement.getGeneratedKeys();
+            if (resultSet.next()) {
+            	pessoaId = resultSet.getInt(1);
+            }
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new DBException("Erro ao cadastrar pessoa. ");
@@ -63,6 +70,7 @@ public class OraclePessoaDAO implements PessoaDAO {
 				e.printStackTrace();
 			}
 		}
+		return pessoaId;
 	}
 
 	@Override
@@ -101,11 +109,12 @@ public class OraclePessoaDAO implements PessoaDAO {
 			resultSet = statement.executeQuery();
 			
 			if (resultSet.next()) {
-				int cpf = resultSet.getInt("cd_cpf");
+				int codigo = resultSet.getInt("cd_pessoa");
+				String cpf = resultSet.getNString("cd_cpf");
 				String nome = resultSet.getNString("nm_nome");
 				String status = resultSet.getNString("tp_status");
 				
-				pessoa = new Pessoa(nome, cpf, status);
+				pessoa = new Pessoa(codigo, nome, cpf, status);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -133,11 +142,12 @@ public class OraclePessoaDAO implements PessoaDAO {
 			resultSet = statement.executeQuery();
 			
 			while (resultSet.next()) {
-				int cpf = resultSet.getInt("cd_cpf");
+				int codigo = resultSet.getInt("cd_pessoa");
+				String cpf = resultSet.getNString("cd_cpf");
 				String nome = resultSet.getNString("nm_nome");
 				String status = resultSet.getNString("tp_status");
 				
-				Pessoa pessoa = new Pessoa(nome, cpf, status);
+				Pessoa pessoa = new Pessoa(codigo, nome, cpf, status);
 				lista.add(pessoa);
 			}
 		} catch (Exception e) {

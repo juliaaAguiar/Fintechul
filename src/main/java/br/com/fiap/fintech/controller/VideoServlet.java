@@ -1,15 +1,19 @@
 package br.com.fiap.fintech.controller;
 
 import java.io.IOException;
+<<<<<<< HEAD
 
 import java.util.List;
 
+=======
+>>>>>>> c1c582d6fbd2dc22fe519e2a9f10ed60edc8f5e9
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+<<<<<<< HEAD
 import br.com.fiap.fintech.bean.Video;
 import br.com.fiap.fintech.dao.VideoDAO;
 import br.com.fiap.fintech.exception.DBException;
@@ -145,3 +149,21 @@ public class VideoServlet extends HttpServlet {
 }	
 	
 	
+=======
+@WebServlet("/video")
+public class VideoServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    public VideoServlet() {
+        super();
+    }
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+}
+>>>>>>> c1c582d6fbd2dc22fe519e2a9f10ed60edc8f5e9
