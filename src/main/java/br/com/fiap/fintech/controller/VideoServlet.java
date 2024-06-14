@@ -18,10 +18,6 @@ import br.com.fiap.fintech.factory.DAOFactory;
 public class VideoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public VideoServlet() {
-        super();
-    }
-
     private VideoDAO dao;
 	
 	@Override
@@ -128,4 +124,4 @@ public class VideoServlet extends HttpServlet {
     	}
     	listar(request,response);        
     }
-}
+}	
