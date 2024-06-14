@@ -10,22 +10,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.fiap.fintech.bean.Ativo;
-import br.com.fiap.fintech.dao.AtivoDAO;
+import br.com.fiap.fintech.bean.Video;
+import br.com.fiap.fintech.dao.VideoDAO;
 import br.com.fiap.fintech.exception.DBException;
 import br.com.fiap.fintech.factory.DAOFactory;
 
 @WebServlet("/AtivoServlet")
-public class AtivoServlet extends HttpServlet {
+public class VideoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-   private AtivoDAO dao;
+   private VideoDAO dao;
    
    
    public void init() throws ServletException{
 	   super.init();
 
-	   dao = DAOFactory.getAtivoDAO();
+	   dao = DAOFactory.getVideoDAO();
    }
 
    @Override
@@ -48,18 +48,18 @@ public class AtivoServlet extends HttpServlet {
    private void abrirFormEdicao(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	   
 	   int id = Integer.parseInt(request.getParameter("codigo"));		
-	   Ativo ativo = dao.buscar(id);
-	   request.setAttribute("ativo", ativo);
-	   request.getRequestDispatcher("editar_ativo.jsp").forward(request,response);
+	   Video video = dao.buscar(id);
+	   request.setAttribute("video", video);
+	   request.getRequestDispatcher("video.jsp").forward(request,response);
 	   
 	}
 
 
 	
 	private void listar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<Ativo> lista = dao.listar();
-		request.setAttribute("ativo", lista);
-		request.getRequestDispatcher("listaAtivo.jsp").forward(request,response);
+		List<Video> lista = dao.listar();
+		request.setAttribute("video", lista);
+		request.getRequestDispatcher("video.jsp").forward(request,response);
 	}
 		
    
@@ -81,19 +81,18 @@ public class AtivoServlet extends HttpServlet {
 
 	}
 
-	private void cadastrar(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	private void cadastrar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 			
-			String tipo = request.getParameter("tipo");
-			String nome = request.getParameter("nome");
-			double valorAtual = Double.parseDouble(request.getParameter("valorAtual"));
+			String titulo = request.getParameter("titulo");
+			String link = request.getParameter("link");			
 			String descricao = request.getParameter("descricao");
+			
 
-			Ativo ativo = new Ativo(0,tipo,nome,valorAtual,descricao);
-			dao.cadastrar(ativo);
+			Video video = new Video(0,titulo, link,descricao);
+			dao.cadastrar(video);
 
-			request.setAttribute("msg", "Ativo Cadastrado");	
+			request.setAttribute("msg", "Video Cadastrado");	
 			
 		}catch(DBException db){
 			db.printStackTrace();
@@ -109,15 +108,15 @@ public class AtivoServlet extends HttpServlet {
 	private void editar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 			int codigo = Integer.parseInt(request.getParameter("codigo"));
-			String tipo = request.getParameter("tipo");
-			String nome = request.getParameter("nome");
-			double valorAtual = Double.parseDouble(request.getParameter("valorAtual"));
-			String descricao = request.getParameter("descricao");
-			
-			Ativo ativo = new Ativo(codigo,tipo, nome, valorAtual, descricao);
-			dao.atualizar(ativo);
+			String titulo = request.getParameter("titulo");
+			String link = request.getParameter("link");			
+			String descricao = request.getParameter("descricao");			
 
-			request.setAttribute("msg", "Ativo atualizado!");
+			
+			Video video = new Video(codigo,titulo, link,descricao);
+			dao.atualizar(video);
+
+			request.setAttribute("msg", "Video atualizado!");
 		} catch (DBException db) {
 			db.printStackTrace();
 			request.setAttribute("erro", "Erro ao atualizar");
