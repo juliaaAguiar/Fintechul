@@ -1,7 +1,6 @@
 package br.com.fiap.fintech.controller;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.fiap.fintech.bean.Conta;
 import br.com.fiap.fintech.bean.Pessoa;
 import br.com.fiap.fintech.bean.Usuario;
 import br.com.fiap.fintech.dao.PessoaDAO;
@@ -21,11 +21,14 @@ public class UsuarioServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	private UsuarioDAO dao;
+	private PessoaDAO pessoadao;
+
 	
 	@Override
 	public void init() throws ServletException {
 		super.init();
 		dao = DAOFactory.getUsuarioDAO();
+		pessoadao = DAOFactory.getPessoaDAO();
 	}
        
     public UsuarioServlet() {
@@ -39,6 +42,9 @@ public class UsuarioServlet extends HttpServlet {
 		switch (acao) {
 		case "abrir-form-edicao":
 			abrirFormEdicao(request, response);
+		case "abrir-form-cadastro":
+			abrirFormCadastro(request, response);
+			break;
 		}	
 	}
 
@@ -49,6 +55,11 @@ public class UsuarioServlet extends HttpServlet {
 		request.setAttribute("usuario", usuario);
 		request.getRequestDispatcher("edicao-pessoa.jsp").forward(request, response);
 	}
+	
+	private void abrirFormCadastro(HttpServletRequest request, HttpServletResponse response)
+    		throws ServletException, IOException {
+    	request.getRequestDispatcher("cadastrar.jsp").forward(request, response);
+    }
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     		throws ServletException, IOException {
@@ -84,7 +95,6 @@ public class UsuarioServlet extends HttpServlet {
 
     private void editar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	try {
-    		PessoaDAO pessoadao = DAOFactory.getPessoaDAO();
 			String cpf = request.getParameter("cpf");
 			String email = request.getParameter("email");
 			String nome = request.getParameter("nome");
@@ -111,7 +121,6 @@ public class UsuarioServlet extends HttpServlet {
     private void cadastrar(HttpServletRequest request, HttpServletResponse response)
     		throws ServletException, IOException {
     	try {
-    		PessoaDAO pessoadao = DAOFactory.getPessoaDAO();
 			String cpf = request.getParameter("cpf");
 			String nome = request.getParameter("nome");
 			String email = request.getParameter("email");
