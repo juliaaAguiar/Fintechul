@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -9,7 +10,7 @@
     <link rel="icon" href="resources/images/logo.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">    
 
     <title>Fintech</title>
 </head>
@@ -81,11 +82,19 @@
                     </div>
                 </div>
             </div>
+            
             <div class="col-md-4">
                 <div class="card mb-4">
                     <div class="card-header">Registrar Receita/Despesa</div>
                     <div class="card-body">
-                        <form>
+                    <c:if test="${not empty msg }">
+						<div class="alert alert-success">${msg}</div>
+					</c:if>
+					
+					<c:if test="${not empty erro }">
+						<div class="alert alert-danger">${erro}</div>
+					</c:if>
+                        <form id="transactionForm">
                             <div class="form-group">
                                 <label for="data">Data</label>
                                 <input type="date" class="form-control" id="data" required>
@@ -118,10 +127,14 @@
         <jsp:include page="footer.jsp" />
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaK2Q7B8e91FNVzjPyyW0">
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaK2Q7B8e91FNVzjPyyW0"></script>    
+        
+    <script src="resources/js/script.js"></script>   	
+	
 </body>
 </html>
