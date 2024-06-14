@@ -33,7 +33,7 @@
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-6">
                         <div class="form-group">
-                            <input type="tel" name="CPF" id="CPF" class="form-control input-lg" placeholder="CPF" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
+                            <input type="tel" name="cpf" id="CPF" class="form-control input-lg" placeholder="CPF" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
                         </div>
                     </div>
                 </div>
@@ -43,12 +43,7 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6">
                         <div class="form-group">
-                            <input type="password" name="Senha" id="Senha" class="form-control input-lg" placeholder="Senha">
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6">
-                        <div class="form-group">
-                            <input type="password" name="conf_senha" id="conf_senha" class="form-control input-lg" placeholder="Confirmar senha">
+                            <input type="password" name="senha" id="Senha" class="form-control input-lg" placeholder="Senha">
                         </div>
                     </div>
                 </div>
