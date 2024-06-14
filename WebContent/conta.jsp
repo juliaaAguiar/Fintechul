@@ -91,7 +91,7 @@
                         <div class="card-header">Outras Opções</div>
                         <div class="card-body">
                             <a href="cartoes.jsp" class="btn btn-secondary btn-block mb-2">Cartões</a>
-                            <a href="estrato.jsp" class="btn btn-secondary btn-block">Extrato</a>
+                            <a href="extrato.jsp" class="btn btn-secondary btn-block">Extrato</a>
                         </div>
                     </div>
                 </div>
