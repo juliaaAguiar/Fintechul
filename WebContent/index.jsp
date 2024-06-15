@@ -120,6 +120,7 @@
         </div>
 
         <hr class="featurette-divider">
+   </div>     
 
     <footer class="container">
         <jsp:include page="footer.jsp" />

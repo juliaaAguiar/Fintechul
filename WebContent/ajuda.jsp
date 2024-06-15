@@ -1,18 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Language" content="pt-BR">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Fintech</title>
-    <link rel="icon" href="resources/images/logo.png">
-    <link rel="stylesheet" href="resources/css/ajuda.css" type="text/css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-</head>
 <header>
     <jsp:include page="header.jsp" />
 </header>
@@ -27,7 +14,7 @@
         <div class="card">
             <div class="card-header" id="headingOne">
                 <h2 class="mb-0">
-                    <button class="btn btn-link custom-btn-link" style="color: black; type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <button class="btn btn-link custom-btn-link" style="color: black;" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         Como alterar a senha da minha conta?
                     </button>
                 </h2>
@@ -45,7 +32,7 @@
         <div class="card">
             <div class="card-header" id="headingTwo">
                 <h2 class="mb-0">
-                    <button class="btn btn-link custom-btn-link" style="color: black; type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <button class="btn btn-link custom-btn-link" style="color: black;" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                         Como realizar a minha primeira transferência?
                     </button>
                 </h2>
@@ -63,7 +50,7 @@
         <div class="card">
             <div class="card-header" id="headingThree">
                 <h2 class="mb-0">
-                    <button class="btn btn-link custom-btn-link" style="color: black; type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <button class="btn btn-link custom-btn-link" style="color: black;" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                         Como adicionar um novo cartão de crédito?
                     </button>
                 </h2>
@@ -81,7 +68,7 @@
         <div class="card">
             <div class="card-header" id="headingFour">
                 <h2 class="mb-0">
-                    <button class="btn btn-link custom-btn-link" style="color: black; type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    <button class="btn btn-link custom-btn-link" style="color: black;" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                         Como posso entrar em contato com o suporte ao cliente?
                     </button>
                 </h2>
@@ -99,7 +86,7 @@
         <div class="card">
             <div class="card-header" id="headingFive">
                 <h2 class="mb-0">
-                    <button class="btn btn-link custom-btn-link" style="color: black; type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    <button class="btn btn-link custom-btn-link" style="color: black;" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                         Como posso visualizar meu extrato financeiro?
                     </button>
                 </h2>
@@ -117,7 +104,7 @@
         <div class="card">
             <div class="card-header" id="headingSix">
                 <h2 class="mb-0">
-                    <button class="btn btn-link custom-btn-link" style="color: black; type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                    <button class="btn btn-link custom-btn-link" style="color: black;" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                         Posso agendar pagamentos recorrentes?
                     </button>
                 </h2>
