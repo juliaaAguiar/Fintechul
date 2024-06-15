@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -20,10 +21,12 @@
     <header>
         <jsp:include page="header.jsp" />
     </header>
+    
+	<h1 class="text" style="color: black; text-align: center; margin-top: 80px;">Cadastrar Despesas</h1>
     <main role="main" class="container mt-5 pt-5">
             <div class="col-md-4">
                 <div class="card mb-4">
-                    <div class="card-header">Editar Despesa</div>
+                    <div class="card-header">Registrar Despesa</div>
                     <div class="card-body">
                     <c:if test="${not empty msg }">
 						<div class="alert alert-success">${msg}</div>
@@ -32,21 +35,24 @@
 					<c:if test="${not empty erro }">
 						<div class="alert alert-danger">${erro}</div>
 					</c:if>
-                        <form action= "despesa" method= "post">
+					
+                        <form action="despesa" method="post">
+                        	<input type="hidden" value="atualizar" name="acao">
+                        	
                             <div class="form-group">
                                 <label for="id-data">Data</label>
-                                <input type="date" class="form-control" id="data" required>
+                                <input type="date" class="form-control" id="id-data" required>
                             </div>
                             <div class="form-group">
-                                <label for="id-descricao">Descrição</label>
-                                <input type="text" class="form-control" id="descricao" required>
+                                <label for="descricao">Descrição</label>
+                                <input type="text" class="form-control" id="id-descricao" required>
                             </div>
+                            
                             <div class="form-group">
-                                <label for="id-valor">Valor (R$)</label>
-                                <input type="number" class="form-control" id="valor" required>
+                                <label for="valor">Valor (R$)</label>
+                                <input type="number" class="form-control" id="id-valor" required>
                             </div>
-                            <input type="submit" value="Salvar" class="btn btn-primary">
-        					<a href="despesa?acao=listar" class="btn btn-danger">Cancelar</a>
+                            <input type="submit" class="btn btn-primary btn-block" style="background-color: #5a5a5a; border-color: #5a5a5a; color: white;">Registrar</input>
                         </form>
                     </div>
                 </div>
@@ -65,7 +71,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
         integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaK2Q7B8e91FNVzjPyyW0"></script>    
         
-    <script src="resources/js/script.js"></script>   	
-	
+   
 </body>
 </html>

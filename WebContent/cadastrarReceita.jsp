@@ -22,7 +22,7 @@
         <jsp:include page="header.jsp" />
     </header>
     
-	<h1 class="text" style="color: black; text-align: center; margin-top: 80px;">Cadastrar Receitas Despesas e Pagamentos Recorrentes</h1>
+	<h1 class="text" style="color: black; text-align: center; margin-top: 80px;">Cadastrar Receitas</h1>
     <main role="main" class="container mt-5 pt-5">
             <div class="col-md-4">
                 <div class="card mb-4">
@@ -37,7 +37,7 @@
 					</c:if>
 					
                         <form action="deposito" method="post">
-                        	<input type="hidden" value="atualizar" name="acao">
+                        	<input type="hidden" value="cadastrar" name="acao">
                         	
                             <div class="form-group">
                                 <label for="id-data">Data</label>
