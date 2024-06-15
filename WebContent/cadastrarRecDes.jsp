@@ -21,7 +21,7 @@
         <jsp:include page="header.jsp" />
     </header>
 <h1 class="text" style="color: black; text-align: center; margin-top: 80px;">Cadastrar Receitas Despesas e Pagamentos Recorrentes</h1>
-    <main role="main" class="container mt-5 pt-5">
+    <main role="main" class="container mt-5 pt-5" style="display: flex; justify-content: center;">
             <div class="col-md-4">
                 <div class="card mb-4">
                     <div class="card-header">Registrar Receita/Despesa</div>

@@ -89,16 +89,6 @@
 													data-toggle="modal" data-target="#excluirModal"
  													onclick="codigoExcluir.value = ${p.codigo}"> 
 													Excluir</button></td>
-													
-													<td><c:url value="investimento" var="link">
-													<c:param name="acao" value="abrir-form-editar" />
- 													<c:param name="codigo_ativo" value="${p.codigo_ativo}" /> 
- 													<c:param name="codigo_carteira" value="${p.codigo_carteira}" />
-												</c:url> <a href="${link}" class="btn btn-primary btn-xs">Adicionar a Carteira</a>
-												<button type="button" class="btn btn-danger btn-xs"
-													data-toggle="modal" data-target="#excluirModal"
- 													onclick="codigoExcluir.value = ${p.codigo}"> 
-													Excluir</button></td>
 										</tr>
 									</c:forEach>
 							</table>

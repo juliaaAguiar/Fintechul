@@ -20,8 +20,8 @@
     <header>
         <jsp:include page="header.jsp" />
     </header>
-    <main role="main" class="container mt-5 pt-5">
-            <div class="col-md-4">
+    <main role="main" class="container mt-5 pt-5" style="display: flex; justify-content: center;">
+        <div class="col-md-4">
                 <div class="card mb-4">
                     <div class="card-header">Editar Pagamento Recorrente</div>
                     <div class="card-body">
