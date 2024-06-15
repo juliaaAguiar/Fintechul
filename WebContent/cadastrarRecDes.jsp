@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -17,71 +20,8 @@
     <header>
         <jsp:include page="header.jsp" />
     </header>
-
+<h1 class="text" style="color: black; text-align: center; margin-top: 80px;">Cadastrar Receitas Despesas e Pagamentos Recorrentes</h1>
     <main role="main" class="container mt-5 pt-5">
-        <h1 class="text-center mb-4">Receitas e Despesas</h1>
-        <div class="row">
-            <div class="col-md-8">
-                <div class="card mb-4">
-                    <div class="card-header">Receitas e Despesas</div>
-                    <div class="card-body">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Data</th>
-                                    <th>Descrição</th>
-                                    <th>Tipo</th>
-                                    <th>Valor (R$)</th>
-                                    <th>Alterações</th>
-                                </tr>
-                            </thead>
-                            <tbody>	
-                                <tr>
-                                    <td>10/06/2024</td>
-                                    <td>Salário</td>
-                                    <td>Receita</td>
-                                    <td>5000.00</td>
-                                    <td>
-                                        <button type="button" class="btn btn-info btn-sm">Editar</button>
-                                        <button type="button" class="btn btn-danger btn-sm">Excluir</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>12/06/2024</td>
-                                    <td>Supermercado</td>
-                                    <td>Despesa</td>
-                                    <td>250.00</td>
-                                    <td>
-                                        <button type="button" class="btn btn-info btn-sm">Editar</button>
-                                        <button type="button" class="btn btn-danger btn-sm">Excluir</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>15/06/2024</td>
-                                    <td>Venda de Ações</td>
-                                    <td>Receita</td>
-                                    <td>1200.00</td>
-                                    <td>
-                                        <button type="button" class="btn btn-info btn-sm">Editar</button>
-                                        <button type="button" class="btn btn-danger btn-sm">Excluir</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>18/06/2024</td>
-                                    <td>Aluguel</td>
-                                    <td>Despesa</td>
-                                    <td>800.00</td>
-                                    <td>
-                                        <button type="button" class="btn btn-info btn-sm">Editar</button>
-                                        <button type="button" class="btn btn-danger btn-sm">Excluir</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            
             <div class="col-md-4">
                 <div class="card mb-4">
                     <div class="card-header">Registrar Receita/Despesa</div>
@@ -105,9 +45,9 @@
                             <div class="form-group">
                                 <label for="tipo">Tipo</label>
                                 <select class="form-control" id="tipo" required>
-                                    <option value="Receita">Receita</option>
-                                    <option value="Despesa">Despesa</option>
-                                    <option value="Despesa">Pagamento recorrente</option>
+                                    <option value="receita">Receita</option>
+                                    <option value="dspesa">Despesa</option>
+                                    <option value="pagamentoRecorrente">Pagamento recorrente</option>
                                 </select>
                             </div>
                             <div class="form-group">

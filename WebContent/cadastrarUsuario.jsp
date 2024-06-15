@@ -22,7 +22,7 @@
 <div class="container" style="margin-top: 50px;">
     <div class="row">
         <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-            <form role="form">
+            <form role="form" action="usuario" method="post">
                 <h2 style="color: #5a5a5a; font-weight: bold; margin-bottom: 30px; font-size: 24px;">Junte-se a Fintech e comece a transformar sua vida financeira hoje mesmo!</h2>
                 <hr class="colorgraph" style="border-top-color: #5a5a5a; margin-bottom: 30px;">
                 <div class="row">
@@ -33,7 +33,7 @@
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-6">
                         <div class="form-group">
-                            <input type="tel" name="cpf" id="CPF" class="form-control input-lg" placeholder="CPF" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
+                            <input type="text" name="cpf" id="CPF" class="form-control input-lg" placeholder="CPF" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
                         </div>
                     </div>
                 </div>
@@ -44,6 +44,25 @@
                     <div class="col-xs-12 col-sm-6 col-md-6">
                         <div class="form-group">
                             <input type="password" name="senha" id="Senha" class="form-control input-lg" placeholder="Senha">
+                        </div>
+                    </div>
+                </div>
+                 <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="telefone" id="Telefone" class="form-control input-lg" placeholder="Telefone">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <label for="perfil">Perfil</label>
+                                <select class="form-control" id="perfil" required>
+                                    <option value="conservador">Conservador</option>
+                                    <option value="moderado">Moderado</option>
+                                    <option value="arrojado">Arrojado</option>
+                                </select>
                         </div>
                     </div>
                 </div>

@@ -30,7 +30,7 @@
                         <h2>420 <small>ativos disponíveis</small></h2>
                     </div>
                     <p class="mb-1">Investimentos em renda fixa são ideais para investidores conservadores ou iniciantes que procuram proteger seu capital e garantir rendimentos previsíveis. Também são recomendados para aqueles que desejam diversificar sua carteira de investimentos com opções de menor risco.</p>
-                    <button type="button" class="btn btn-primary btn-lg btn-block mt-2" style="background-color: #5a5a5a; border-color: #5a5a5a; color: white;">Acessar</button>
+                    <a type="button" href="listaAtivo.jsp" class="btn btn-primary btn-lg btn-block mt-2" style="background-color: #5a5a5a; border-color: #5a5a5a; color: white;">Acessar<a>
                     <div class="crcle mt-2">
                         <span class="circle"></span>
                         <span class="circle"></span>

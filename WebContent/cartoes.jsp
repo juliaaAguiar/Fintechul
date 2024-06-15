@@ -31,16 +31,6 @@
                         <p><strong>Limite:</strong> R$ 10.000,00</p>
                         <p><strong>Limite:</strong> R$ 10.000,00</p>
                     </div>
-                    <div class="card-footer">
-                    <h5 class="card-title">Cartão de Crédito</h5>
-                        <!-- Extrato do cartão à esquerda -->
-                        <ul class="list-group mx-auto">
-                            <li class="list-group-item">Compra no Crédito 1 - R$ 100,00</li>
-                            <li class="list-group-item">Parcela do Crédito 1/3 - R$ 50,00</li>
-                            <li class="list-group-item">Parcela do Crédito 2/3 - R$ 50,00</li>
-                            <li class="list-group-item">Parcela do Crédito 3/3 - R$ 50,00</li>
-                        </ul>
-                    </div>
                 </div>
             </div>
 
@@ -53,14 +43,6 @@
                         <p><strong>Agência:</strong> 456</p>
                         <p><strong>Número da Conta:</strong> 0987654321</p>
                         <p><strong>Saldo:</strong> R$ 2000,00</p>
-                    </div>
-                    <div class="card-footer">
-                    	<h5 class="card-title">Cartão de Débito</h5>
-                        <!-- Extrato do cartão à direita -->
-                        <ul class="list-group">
-                            <li class="list-group-item">Compra no Débito 1 - R$ 50,00</li>
-                            <li class="list-group-item">Compra no Débito 2 - R$ 30,00</li>
-                        </ul>
                     </div>
                 </div>
             </div>

@@ -62,13 +62,13 @@ public class PagamentoRecorrenteServlet extends HttpServlet {
 		int codigo_conta = Integer.parseInt(request.getParameter("codigo_conta"));
     	Conta conta = contaDao.buscar(codigo_conta);
     	request.setAttribute("conta", conta);
-    	request.getRequestDispatcher("cadastro-pagamentorecorrente.jsp").forward(request, response);
+    	request.getRequestDispatcher("cadastrarRecDes.jsp").forward(request, response);
     }
 	
 	private void listar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<PagamentoRecorrente> lista = dao.listar();
 		request.setAttribute("pagamentosrecorrentes", lista);
-		request.getRequestDispatcher("lista-pagamentorecorrente.jsp").forward(request, response);
+		request.getRequestDispatcher("conta.jsp").forward(request, response);
 	}
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response)

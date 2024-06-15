@@ -33,7 +33,7 @@
                         <a class="nav-link" href="cadastrarRecDes.jsp">Receita/Despesa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="listaAtivo.jsp">Investimento</a>
+                        <a class="nav-link" href="ativo.jsp">Investimento</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="conta.jsp">Conta</a>
