@@ -8,9 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.fiap.fintech.bean.Conta;
+import br.com.fiap.fintech.bean.Deposito;
+import br.com.fiap.fintech.bean.Despesa;
+import br.com.fiap.fintech.bean.Extrato;
+import br.com.fiap.fintech.bean.Usuario;
 import br.com.fiap.fintech.dao.ContaDAO;
 import br.com.fiap.fintech.exception.DBException;
 import br.com.fiap.fintech.singleton.ConnectionManager;
+import java.sql.Date;
 
 public class OracleContaDAO implements ContaDAO {
 	private Connection conexao;
@@ -161,5 +166,40 @@ public class OracleContaDAO implements ContaDAO {
 			}
 		}
 		return lista;
+	}
+
+	public Extrato extrato(Conta conta, Usuario usuario)
+	{
+		List<Deposito> depositos = new ArrayList<Deposito>();
+		List<Despesa> despesas = new ArrayList<Despesa>();
+		PreparedStatement statement = null;
+		ResultSet resultSet = null;
+		try {
+			conexao = ConnectionManager.getInstance().getConnection();
+			String sql = "WITH despesa AS (     SELECT vl_gasto, dt_despesa, cd_cartao     FROM t_despesa ), deposito AS (     SELECT cd_deposito, cd_conta, dt_deposito, vl_deposito     FROM t_deposito ) SELECT      despesa.vl_gasto,      despesa.dt_despesa,     deposito.vl_deposito,     deposito.dt_deposito FROM      cartao     INNER JOIN conta ON conta.cd_conta = cartao.cd_conta     INNER JOIN usuario ON usuario.cd_login = conta.cd_login     INNER JOIN despesa ON cartao.cd_cartao = despesa.cd_cartao     INNER JOIN deposito ON deposito.cd_conta = conta.cd_conta WHERE      conta.cd_conta = ?      AND usuario.cd_login = ?     AND despesa.dt_despesa = deposito.dt_deposito;";
+			statement = conexao.prepareStatement(sql);
+			resultSet = statement.executeQuery();
+			
+			while (resultSet.next()) {
+				double vl_gasto = resultSet.getDouble("despesa.vl_gasto");
+				Date data_despesa = resultSet.getDate("despesa.dt_despesa");
+				double vl_deposito = resultSet.getDouble("deposito.vl_deposito");
+				double dt_deposito = resultSet.getDouble("deposito.dt_deposito");
+
+				Deposito deposito = new Deposito(dt_deposito, vl_deposito);
+				Despesa despesa = new Despesa(data_despesa, vl_gasto);
+				lista.add(conta);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				statement.close();
+				resultSet.close();
+				conexao.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 }

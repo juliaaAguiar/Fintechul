@@ -19,7 +19,7 @@
     </header>
 
     <main role="main" class="container mt-5 pt-5">
-        <h1 class="text-center mb-4">Receitas e Despesas</h1>
+        <h1 class="text-center mb-4">Receitas e Despesas e Pagamento Recorrente</h1>
         <div class="row">
             <div class="col-md-8">
                 <div class="card mb-4">
@@ -29,16 +29,16 @@
                             <thead>
                                 <tr>
                                     <th>Data</th>
-                                    <th>Descrição</th>
+                                    <th>Descriï¿½ï¿½o</th>
                                     <th>Tipo</th>
                                     <th>Valor (R$)</th>
-                                    <th>Alterações</th>
+                                    <th>Alteraï¿½ï¿½es</th>
                                 </tr>
                             </thead>
                             <tbody>	
                                 <tr>
                                     <td>10/06/2024</td>
-                                    <td>Salário</td>
+                                    <td>Salï¿½rio</td>
                                     <td>Receita</td>
                                     <td>5000.00</td>
                                     <td>
@@ -58,7 +58,7 @@
                                 </tr>
                                 <tr>
                                     <td>15/06/2024</td>
-                                    <td>Venda de Ações</td>
+                                    <td>Venda de Aï¿½ï¿½es</td>
                                     <td>Receita</td>
                                     <td>1200.00</td>
                                     <td>
@@ -85,21 +85,24 @@
                 <div class="card mb-4">
                     <div class="card-header">Registrar Receita/Despesa</div>
                     <div class="card-body">
-                        <form>
+                        <form id="formRegistro" method="post">
+                            <input type="hidden" name="codigo_conta" id="codigo_conta" value="${conta.codigo}">
+                            <input type="hidden" name="codigo_cartao" id="codigo_cartao" value="${cartao.codigo}">
+                            <input type="hidden" value="cadastrar" name="acao">
                             <div class="form-group">
                                 <label for="data">Data</label>
                                 <input type="date" class="form-control" id="data" required>
                             </div>
-                            <div class="form-group">
-                                <label for="descricao">Descrição</label>
-                                <input type="text" class="form-control" id="descricao" required>
+                            <div class="form-group" id="nomePagamentoRecorrente">
+                                <label for="descricao">Nome</label>
+                                <input type="text" class="form-control" id="nome" name="nome" required>
                             </div>
                             <div class="form-group">
                                 <label for="tipo">Tipo</label>
                                 <select class="form-control" id="tipo" required>
-                                    <option value="Receita">Receita</option>
-                                    <option value="Despesa">Despesa</option>
-                                    <option value="Despesa">Pagamento recorrente</option>
+                                    <option value="deposito">Receita</option>
+                                    <option value="despesa">Despesa</option>
+                                    <option value="pagamentoRecorrente">Pagamento recorrente</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -117,7 +120,29 @@
     <footer class="container">
         <jsp:include page="footer.jsp" />
     </footer>
-
+    <script>
+        function mudarAction() {
+            var tipo = document.getElementById("tipo").value;
+            var form = document.getElementById("formRegistro");
+    
+            switch (tipo) {
+                case "deposito":
+                    form.action = "deposito"; 
+                    break;
+                case "despesa":
+                    form.action = "despesa"; 
+                    break;
+                case "pagamentoRecorrente":
+                    form.action = "pagamentoRecorrente"; 
+                    break;
+                default:
+                    document.getElementById("nomePagamentoRecorrente").style.display = "none";
+                    form.action = "";
+            }
+        }
+        document.getElementById("tipo").addEventListener("change", mudarAction);
+    </script>
+    
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

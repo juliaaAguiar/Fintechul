@@ -15,6 +15,7 @@ import br.com.fiap.fintech.dao.CartaoDAO;
 import br.com.fiap.fintech.dao.DespesaDAO;
 import br.com.fiap.fintech.exception.DBException;
 import br.com.fiap.fintech.factory.DAOFactory;
+import java.util.Date;
 
 @WebServlet("/despesa")
 public class DespesaServlet extends HttpServlet {
@@ -69,7 +70,7 @@ public class DespesaServlet extends HttpServlet {
 	private void listar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Despesa> lista = dao.listar();
 		request.setAttribute("despesas", lista);
-		request.getRequestDispatcher("lista-despesa.jsp").forward(request, response);
+		request.getRequestDispatcher("extrato.jsp").forward(request, response);
 	}
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -129,7 +130,7 @@ public class DespesaServlet extends HttpServlet {
     	try {
     		int codigo_cartao = Integer.parseInt(request.getParameter("codigo_cartao"));
         	Cartao cartao = cartaoDao.buscar(codigo_cartao);
-			java.util.Date dataUtil = new java.util.Date();
+			Date dataUtil = Date.parse(request.getParameter("data"));
 			java.sql.Date data = new java.sql.Date(dataUtil.getTime());
 			double valor = Double.parseDouble(request.getParameter("valor"));
 			Despesa despesa = new Despesa(data, valor, cartao);

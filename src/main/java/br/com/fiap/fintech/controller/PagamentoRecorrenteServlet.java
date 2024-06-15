@@ -1,6 +1,7 @@
 package br.com.fiap.fintech.controller;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -16,7 +17,7 @@ import br.com.fiap.fintech.dao.PagamentoRecorrenteDAO;
 import br.com.fiap.fintech.exception.DBException;
 import br.com.fiap.fintech.factory.DAOFactory;
 
-@WebServlet("/pagamentorecorrente")
+@WebServlet("/pagamentoRecorrente")
 public class PagamentoRecorrenteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -62,13 +63,13 @@ public class PagamentoRecorrenteServlet extends HttpServlet {
 		int codigo_conta = Integer.parseInt(request.getParameter("codigo_conta"));
     	Conta conta = contaDao.buscar(codigo_conta);
     	request.setAttribute("conta", conta);
-    	request.getRequestDispatcher("cadastro-pagamentorecorrente.jsp").forward(request, response);
+    	request.getRequestDispatcher("cadastrarRecDes.jsp").forward(request, response);
     }
 	
 	private void listar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<PagamentoRecorrente> lista = dao.listar();
-		request.setAttribute("pagamentosrecorrentes", lista);
-		request.getRequestDispatcher("lista-pagamentorecorrente.jsp").forward(request, response);
+		request.setAttribute("pagamentosRecorrentes", lista);
+		request.getRequestDispatcher("extrato.jsp").forward(request, response);
 	}
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -131,7 +132,7 @@ public class PagamentoRecorrenteServlet extends HttpServlet {
     	try {
     		int conta_id = Integer.parseInt(request.getParameter("codigo_conta"));
     		Conta conta = contaDao.buscar(conta_id);
-			java.util.Date dataUtil = new java.util.Date();
+			Date dataUtil = Date.parse(request.getParameter("data"));
 			java.sql.Date data = new java.sql.Date(dataUtil.getTime());
 			String nome = request.getParameter("nome");
 			double valor = Double.parseDouble(request.getParameter("valor"));

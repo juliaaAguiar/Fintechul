@@ -1,6 +1,7 @@
 package br.com.fiap.fintech.controller;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -69,7 +70,7 @@ public class DepositoServlet extends HttpServlet {
 	private void listar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Deposito> lista = dao.listar();
 		request.setAttribute("depositos", lista);
-		request.getRequestDispatcher("lista-deposito.jsp").forward(request, response);
+		request.getRequestDispatcher("extrato.jsp").forward(request, response);
 	}
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -129,7 +130,7 @@ public class DepositoServlet extends HttpServlet {
     	try {
     		int codigo_conta = Integer.parseInt(request.getParameter("codigo_conta"));
         	Conta conta = contaDao.buscar(codigo_conta);
-			java.util.Date dataUtil = new java.util.Date();
+			Date dataUtil = Date.parse(request.getParameter("data"));
 			java.sql.Date data = new java.sql.Date(dataUtil.getTime());
 			double valor = Double.parseDouble(request.getParameter("valor"));
 			Deposito deposito = new Deposito(data, valor, conta);

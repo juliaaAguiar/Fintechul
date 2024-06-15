@@ -9,6 +9,11 @@ public class Deposito {
 	private double valor;
 	
 	public Deposito() {}
+
+	public Deposito(Date data, double valor) {
+		this.data = data;
+		this.valor = valor;
+	}
 	
 	public Deposito (Date data, double valor, Conta conta) {
 		this.conta = conta;

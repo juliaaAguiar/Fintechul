@@ -47,6 +47,9 @@ public class ContaServlet extends HttpServlet {
 		case "abrir-form-cadastro":
 			abrirFormCadastro(request, response);
 			break;
+		case "extrato":
+		extrato(request, response);
+		break;
 		}	
 	}
     
@@ -56,6 +59,16 @@ public class ContaServlet extends HttpServlet {
 			Conta conta = dao.buscar(id);
 			request.setAttribute("conta", conta);
 			request.getRequestDispatcher("edicao-conta.jsp").forward(request, response);
+	}
+
+	private void extrato(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			int codigo_conta = Integer.parseInt(request.getParameter("codigo_conta"));
+			int codigo_usuario = Integer.parseInt(request.getParameter("codigo_usuario"));
+			Conta conta = dao.buscar(codigo_conta);
+			Usuario usuario = usuarioDao.buscar(codigo_usuario);
+			request.setAttribute("conta", conta);
+			request.setAttribute("usuario", usuario);
+			request.getRequestDispatcher("extrato.jsp").forward(request, response);
 	}
     
     private void abrirFormCadastro(HttpServletRequest request, HttpServletResponse response)
