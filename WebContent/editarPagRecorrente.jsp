@@ -42,6 +42,7 @@
                               <input type="number" class="form-control" id="id-valor" required>
                           </div>
                           <input type="submit" value="Atualizar" class="btn btn-primary btn-block" style="background-color: #5a5a5a; border-color: #5a5a5a; color: white;">
+                          <a href="conta.jsp" class="btn btn-danger">Cancelar</a>
                       </form>
                   </div>
               </div>

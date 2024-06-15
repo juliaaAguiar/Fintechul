@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <body>
     <header>
@@ -23,12 +25,63 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-<!--                             botão -->
-                        </tr>	
+                        <c:forEach items="${ativo}" var="a">
+							<tr>	
+<!-- 	 Aqui são as informações da carteira, que deveriam vir da lista de ativos  -->
+							    <td>$</td>							    
+							    <td>$</td>
+							    <td>$</td>							    
+							    <td>$</td>
+								<td>$</td>									    
+							    
+								<td><c:url value="pagamentorecorrente" var="link">
+									<c:param name="acao" value="abrir-form-edicao" />
+									<c:param name="codigo" value="${p.codigo}" /> 
+									</c:url> <a href="${link}" class="btn btn-primary btn-xs">Editar</a>
+									<button type="button" class="btn btn-danger btn-xs"
+									data-toggle="modal" data-target="#excluirModal"
+										onclick="codigoExcluir.value = ${p.codigo}"> 
+									Excluir</button>
+								</td>
+							</tr>
+						</c:forEach>
                     </tbody>
                 </table>
             </div>
+        </div>    
+            
+            
+            <!-- Modal  para confirmar ação de excluir-->
+						<div class="modal fade" id="excluirModal" tabindex="-1"
+							role="dialog" aria-labelledby="exampleModalLabel"
+							aria-hidden="true">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel">Confirmação</h5>
+										<button type="button" class="close" data-dismiss="modal"
+											aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">Deseja realmente excluir o
+										lançamento?</div>
+									<div class="modal-footer">
+										<form action="produto" method="post">
+											<input type="hidden" name="acao" value="excluir"> <input
+												type="hidden" name="codigo" id="codigoExcluir">
+											<button type="button" class="btn btn-secondary"
+												data-dismiss="modal">Cancelar</button>
+											<button type="submit" class="btn btn-danger">Excluir</button>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>		
+
+					
+				
+<!-- 		Detalhes da Carteira 		 -->
             <div class="col-md-4">
                 <div class="card mb-4">
                     <div class="card-header">Detalhes da Carteira</div>
@@ -58,7 +111,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        
     </main>
 
     <footer class="container">

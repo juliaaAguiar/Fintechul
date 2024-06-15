@@ -22,13 +22,13 @@
 						<div class="alert alert-danger">${erro}</div>
 					</c:if>
 					
-                        <form action= "investimento" method= "post">
+                        <form action="investimento" method= "post">
                             <div class="form-group">
                                 <label for="id-valor">Valor (R$)</label>
-                                <input type="number" class="form-control" id="valor" required>
+                                <input type="number" class="form-control" id="id-valor" required>
                             </div>
                             <input type="submit" value="Salvar" class="btn btn-primary">
-        					<a href="investimento?acao=listar" class="btn btn-danger">Cancelar</a>
+        					<a href="carteiraInvestimento.jsp" class="btn btn-danger">Cancelar</a>
                         </form>
                     </div>
                 </div>
