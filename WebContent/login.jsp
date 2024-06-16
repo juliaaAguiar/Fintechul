@@ -40,7 +40,6 @@
                 <input type="password" name="senha" class="form-control" placeholder="Senha">
             </div>
             <a href="index.jsp" class="btn custom-btn" style="background-color: #5a5a5a; border-color: #5a5a5a; color: white;">Acessar</a>
-            <a href="cadastrarUsuario.jsp" class="mt-3" style="color: black;">Cadastre-se</a>
         </div>
     </div>
 </div>

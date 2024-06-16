@@ -8,6 +8,7 @@
         <jsp:include page="header.jsp" />
     </header>
 
+<h1 class="text" style="color: black; text-align: center; margin-top: 80px;">Lista de Ativos</h1>
      <div class="col-md-6">
 	      <div class="card mb-4">
 	          <div class="card-header text-center">Ativos</div>
@@ -17,6 +18,7 @@
 	                      <tr>
 	                          <th>Descrição</th>
 	                          <th>Valor</th>
+	                          <th>Ação</th>
 	                      </tr>
 	                  </thead>
 	                  <tbody>
@@ -138,10 +140,9 @@
 	           </div>
 	       </div>
 
-    <footer class="container">
-        <jsp:include page="footer.jsp" />
-    </footer>
-
-   
+	<footer class="container-fluid" style="height: 50px; margin-top: 60px;">
+		<jsp:include page="footer.jsp" />
+	</footer>
+ 
 </body>
 </html>

@@ -15,11 +15,7 @@
     <link rel="stylesheet" href="resources/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <!-- Bootstrap CSS principal -->
-<!--     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
-    
-    
-    <title>Fintech</title>
+  <title>Fintech</title>
   
     
 </head>
@@ -34,9 +30,6 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="cadastrarRecDes.jsp">Receita/Despesa</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="ativo.jsp">Investimento</a>

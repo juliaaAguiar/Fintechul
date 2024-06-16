@@ -9,7 +9,7 @@
     </header>
     
 	<h1 class="text" style="color: black; text-align: center; margin-top: 80px;">Cadastrar Despesas</h1>
-    <main role="main" class="container mt-5 pt-5">
+<main role="main" class="container mt-5 pt-5 d-flex justify-content-center align-items-center" style="height: 300px;">
             <div class="col-md-4">
                 <div class="card mb-4">
                     <div class="card-header">Registrar Despesa</div>
@@ -48,10 +48,11 @@
             </div>
         
     </main>
+    
 
-    <footer class="container">
-        <jsp:include page="footer.jsp" />
-    </footer>
+	<footer class="container-fluid" style="height: 50px; margin-top: 60px;">
+		<jsp:include page="footer.jsp" />
+	</footer>
  
         
    

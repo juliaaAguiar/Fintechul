@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
@@ -9,7 +9,7 @@
 	</header>
 
 	<h1 class="text"
-		style="color: black; text-align: center; margin-top: 80px;">Informa��es
+		style="color: black; text-align: center; margin-top: 80px;">Informações
 		da Conta</h1>
 		
 	<main role="main">
@@ -17,12 +17,12 @@
 		<!-- Removido align-items-center -->
 		<main role="main">
 			<div class="row justify-content-center">
-				<!-- Coluna para o cart�o -->
+				<!-- Coluna para o cartï¿½o -->
 				<div class="col-md-6 text-center">
 					<div class="card mb-4 account-info">
 						<div class="card-body">
 							<img src="resources/images/cartaoConta.png"
-								alt="Imagem do Cart�o" class="img-fluid mb-3">
+								alt="Imagem do Cartï¿½o" class="img-fluid mb-3">
 							<p>
 								<strong>Nome:</strong> Ana Maria Santos
 							</p>
@@ -30,10 +30,10 @@
 								<strong>Tipo:</strong> Conta Corrente
 							</p>
 							<p>
-								<strong>Ag�ncia:</strong> 456
+								<strong>Agência:</strong> 456
 							</p>
 							<p>
-								<strong>N�mero da Conta:</strong> 0987654321
+								<strong>Número da Conta:</strong> 0987654321
 							</p>
 							<p>
 								<strong>Saldo:</strong> R$ 2000,00
@@ -51,9 +51,9 @@
 							<thead>
                                     <tr>
                                     	<th>Data</th>
-                                        <th>Descri��o</th>
+                                        <th>Descrição</th>
                                         <th>Valor</th>
-                                        <th>A��o</th>
+                                        <th>Ação</th>
                                     </tr>
                                 </thead>
 								<tbody>
@@ -97,14 +97,14 @@
 							<div class="modal-dialog" role="document">
 								<div class="modal-content">
 									<div class="modal-header">
-										<h5 class="modal-title" id="exampleModalLabel">Confirma��o</h5>
+										<h5 class="modal-title" id="exampleModalLabel">Confirmação</h5>
 										<button type="button" class="close" data-dismiss="modal"
 											aria-label="Close">
 											<span aria-hidden="true">&times;</span>
 										</button>
 									</div>
 									<div class="modal-body">Deseja realmente excluir o
-										lan�amento?</div>
+										lançamento?</div>
 									<div class="modal-footer">
 										<form action="produto" method="post">
 											<input type="hidden" name="acao" value="excluir"> <input
@@ -125,9 +125,9 @@
 
 			<div class="col-md-12 text-center">
 				<div class="card mb-4">
-					<div class="card-header">Outras Op��es</div>
+					<div class="card-header">Outras Opções</div>
 					<div class="card-body">
-						<a href="cartoes.jsp" class="btn btn-secondary btn-block mb-2">Cart�es</a>
+						<a href="cartoes.jsp" class="btn btn-secondary btn-block mb-2">Cartões</a>
 					 	<c:url value="/extrato" var="urlExtrato">
 		                	<c:param name="contaId" value="1" />
 	            		</c:url>
@@ -139,9 +139,10 @@
 	</main>
 	
 
-	<footer class="container-fluid" style="height: 60px;">
+<footer class="container-fluid" style="height: 50px; margin-top: 60px;">
 		<jsp:include page="footer.jsp" />
 	</footer>
 
 </body>
 </html>
+	
