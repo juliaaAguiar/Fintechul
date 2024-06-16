@@ -66,8 +66,9 @@ public class ContaServlet extends HttpServlet {
 			int codigo_usuario = Integer.parseInt(request.getParameter("codigo_usuario"));
 			Conta conta = dao.buscar(codigo_conta);
 			Usuario usuario = usuarioDao.buscar(codigo_usuario);
-			request.setAttribute("conta", conta);
-			request.setAttribute("usuario", usuario);
+			Extrato extrato = dao.extrato(conta, usuario);
+			// request.setAttribute("conta", conta);
+			// request.setAttribute("usuario", usuario);
 			request.getRequestDispatcher("extrato.jsp").forward(request, response);
 	}
     

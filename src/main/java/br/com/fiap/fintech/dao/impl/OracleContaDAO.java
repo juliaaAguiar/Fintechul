@@ -172,6 +172,7 @@ public class OracleContaDAO implements ContaDAO {
 	{
 		List<Deposito> depositos = new ArrayList<Deposito>();
 		List<Despesa> despesas = new ArrayList<Despesa>();
+		Extrato extrato = null;
 		PreparedStatement statement = null;
 		ResultSet resultSet = null;
 		try {
@@ -181,14 +182,15 @@ public class OracleContaDAO implements ContaDAO {
 			resultSet = statement.executeQuery();
 			
 			while (resultSet.next()) {
-				double vl_gasto = resultSet.getDouble("despesa.vl_gasto");
 				Date data_despesa = resultSet.getDate("despesa.dt_despesa");
+				Date dt_deposito = resultSet.getDate("deposito.dt_deposito");
 				double vl_deposito = resultSet.getDouble("deposito.vl_deposito");
-				double dt_deposito = resultSet.getDouble("deposito.dt_deposito");
+				double vl_gasto = resultSet.getDouble("despesa.vl_gasto");
 
 				Deposito deposito = new Deposito(dt_deposito, vl_deposito);
+				depositos.add(deposito);
 				Despesa despesa = new Despesa(data_despesa, vl_gasto);
-				lista.add(conta);
+				despesas.add(despesa);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -201,5 +203,7 @@ public class OracleContaDAO implements ContaDAO {
 				e.printStackTrace();
 			}
 		}
+		extrato = new Extrato(despesas, depositos);
+		return extrato;
 	}
 }

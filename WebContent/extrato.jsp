@@ -33,14 +33,15 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <c:forEach items="pagamentosRecorrentes" var="p">
+                                <c:forEach items="registros" var="r">
                                     <tr>
                                         <td>
-                                            <fmt:formatDate value="${p.data.time}" pattern="dd/MM/yyyy" />
+                                            <fmt:formatDate value="${r.data.time}" pattern="dd/MM/yyyy" />
                                         </td>
-                                        <td>${p.nome}</td>
-                                        <td>${p.data}</td>
-                                        <td>${p.conta.nome}</td>
+                                        <td>${r.despesa.vl_gasto}</td>
+                                        <td>${r.deposito.vl_deposito}</td>
+                                        <td>${r.cartao.codigo} - ${r.cartao.nr_numero} - ${r.cartao.tp_cartao}</td>
+                                        <td>${r.conta.nr_agencia} - ${r.conta.nr_numero}</td>
                                     </tr>
                                 </c:forEach>
                             </tbody>
