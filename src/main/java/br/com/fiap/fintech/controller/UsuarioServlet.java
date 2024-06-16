@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.fiap.fintech.bean.Conta;
 import br.com.fiap.fintech.bean.Pessoa;
 import br.com.fiap.fintech.bean.Usuario;
 import br.com.fiap.fintech.dao.PessoaDAO;

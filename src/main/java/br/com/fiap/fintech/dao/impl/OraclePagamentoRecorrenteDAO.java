@@ -105,7 +105,6 @@ public class OraclePagamentoRecorrenteDAO implements PagamentoRecorrenteDAO {
 			
 			if (resultSet.next()) {
 				int codigo = resultSet.getInt("cd_pagamentoRecorrente");
-				int codigo_conta = resultSet.getInt("cd_conta");
 				Date data = resultSet.getDate("dt_data");
 				String nome = resultSet.getNString("nm_nome");
 				double valor = resultSet.getDouble("nr_valor");
@@ -139,7 +138,6 @@ public class OraclePagamentoRecorrenteDAO implements PagamentoRecorrenteDAO {
 			
 			while (resultSet.next()) {
 				int codigo = resultSet.getInt("cd_pagamentoRecorrente");
-				int codigo_conta = resultSet.getInt("cd_conta");
 				Date data = resultSet.getDate("dt_data");
 				String nome = resultSet.getNString("nm_nome");
 				double valor = resultSet.getDouble("nr_valor");

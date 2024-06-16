@@ -8,14 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.fiap.fintech.bean.Conta;
-import br.com.fiap.fintech.bean.Deposito;
-import br.com.fiap.fintech.bean.Despesa;
-import br.com.fiap.fintech.bean.Extrato;
-import br.com.fiap.fintech.bean.Usuario;
+import br.com.fiap.fintech.bean.Transacao;
 import br.com.fiap.fintech.dao.ContaDAO;
 import br.com.fiap.fintech.exception.DBException;
 import br.com.fiap.fintech.singleton.ConnectionManager;
-import java.sql.Date;
 
 public class OracleContaDAO implements ContaDAO {
 	private Connection conexao;
@@ -112,7 +108,6 @@ public class OracleContaDAO implements ContaDAO {
 			if (resultSet.next()) {
 				int agencia = resultSet.getInt("nr_agencia");
 				int codigo = resultSet.getInt("cd_conta");
-				int codigo_usuario = resultSet.getInt("cd_login");
 				int numero = resultSet.getInt("nr_numero");
 				double saldo = resultSet.getDouble("nr_saldo");
 				String tipo = resultSet.getNString("ds_tipo");
@@ -167,43 +162,33 @@ public class OracleContaDAO implements ContaDAO {
 		}
 		return lista;
 	}
+	
+	@Override
+	public List<Transacao> extrato(int contaId) {
+	    List<Transacao> transacoes = new ArrayList<>();
+	    String sql = "SELECT 'DEPOSITO' AS tipo, dt_deposito AS data, vl_deposito AS valor FROM T_DEPOSITO WHERE cd_conta = ? " +
+	                 "UNION ALL " +
+	                 "SELECT 'DESPESA' AS tipo, dt_despesa AS data, vl_gasto AS valor FROM T_DESPESA WHERE cd_conta = ? " +
+	                 "ORDER BY data";
 
-	public Extrato extrato(Conta conta, Usuario usuario)
-	{
-		List<Deposito> depositos = new ArrayList<Deposito>();
-		List<Despesa> despesas = new ArrayList<Despesa>();
-		Extrato extrato = null;
-		PreparedStatement statement = null;
-		ResultSet resultSet = null;
-		try {
-			conexao = ConnectionManager.getInstance().getConnection();
-			String sql = "WITH despesa AS (     SELECT vl_gasto, dt_despesa, cd_cartao     FROM t_despesa ), deposito AS (     SELECT cd_deposito, cd_conta, dt_deposito, vl_deposito     FROM t_deposito ) SELECT      despesa.vl_gasto,      despesa.dt_despesa,     deposito.vl_deposito,     deposito.dt_deposito FROM      cartao     INNER JOIN conta ON conta.cd_conta = cartao.cd_conta     INNER JOIN usuario ON usuario.cd_login = conta.cd_login     INNER JOIN despesa ON cartao.cd_cartao = despesa.cd_cartao     INNER JOIN deposito ON deposito.cd_conta = conta.cd_conta WHERE      conta.cd_conta = ?      AND usuario.cd_login = ?     AND despesa.dt_despesa = deposito.dt_deposito;";
-			statement = conexao.prepareStatement(sql);
-			resultSet = statement.executeQuery();
-			
-			while (resultSet.next()) {
-				Date data_despesa = resultSet.getDate("despesa.dt_despesa");
-				Date dt_deposito = resultSet.getDate("deposito.dt_deposito");
-				double vl_deposito = resultSet.getDouble("deposito.vl_deposito");
-				double vl_gasto = resultSet.getDouble("despesa.vl_gasto");
+	    try (Connection conexao = ConnectionManager.getInstance().getConnection();
+	         PreparedStatement statement = conexao.prepareStatement(sql)) {
 
-				Deposito deposito = new Deposito(dt_deposito, vl_deposito);
-				depositos.add(deposito);
-				Despesa despesa = new Despesa(data_despesa, vl_gasto);
-				despesas.add(despesa);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				statement.close();
-				resultSet.close();
-				conexao.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-		extrato = new Extrato(despesas, depositos);
-		return extrato;
+	        statement.setInt(1, contaId);
+	        statement.setInt(2, contaId);
+	        try (ResultSet resultSet = statement.executeQuery()) {
+	            while (resultSet.next()) {
+	                Transacao transacao = new Transacao();
+	                transacao.setTipo(resultSet.getString("tipo"));
+	                transacao.setData(resultSet.getDate("data"));
+	                transacao.setValor(resultSet.getDouble("valor"));
+	                transacoes.add(transacao);
+	            }
+	        }
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    } 
+	    return transacoes;
 	}
+
 }

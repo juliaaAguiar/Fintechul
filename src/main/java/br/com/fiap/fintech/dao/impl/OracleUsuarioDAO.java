@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.fiap.fintech.bean.Pessoa;
 import br.com.fiap.fintech.bean.Usuario;
 import br.com.fiap.fintech.dao.PessoaDAO;
 import br.com.fiap.fintech.dao.UsuarioDAO;

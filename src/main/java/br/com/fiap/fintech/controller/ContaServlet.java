@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.fiap.fintech.bean.Conta;
-import br.com.fiap.fintech.bean.Extrato;
 import br.com.fiap.fintech.bean.Usuario;
 import br.com.fiap.fintech.dao.ContaDAO;
 import br.com.fiap.fintech.dao.UsuarioDAO;
@@ -48,9 +47,9 @@ public class ContaServlet extends HttpServlet {
 		case "abrir-form-cadastro":
 			abrirFormCadastro(request, response);
 			break;
-		case "extrato":
-		extrato(request, response);
-		break;
+//		case "extrato":
+//		extrato(request, response);
+//		break;
 		}	
 	}
     
@@ -59,33 +58,29 @@ public class ContaServlet extends HttpServlet {
 			int id = Integer.parseInt(request.getParameter("codigo"));
 			Conta conta = dao.buscar(id);
 			request.setAttribute("conta", conta);
-			request.getRequestDispatcher("edicao-conta.jsp").forward(request, response);
+			request.getRequestDispatcher("conta.jsp").forward(request, response);
 	}
 
-	private void extrato(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			int codigo_conta = Integer.parseInt(request.getParameter("codigo_conta"));
-			int codigo_usuario = Integer.parseInt(request.getParameter("codigo_usuario"));
-			Conta conta = dao.buscar(codigo_conta);
-			Usuario usuario = usuarioDao.buscar(codigo_usuario);
-			Extrato extrato = dao.extrato(conta, usuario);
-			request.setAttribute("usuario", usuario);
-			request.setAttribute("conta", conta);
-			request.setAttribute("extrato", extrato);
-			request.getRequestDispatcher("extrato.jsp").forward(request, response);
-	}
+//	private void extrato(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//			int codigo_conta = Integer.parseInt(request.getParameter("codigo_conta"));
+//			request.setAttribute("contaId", codigo_conta);
+//			request.getRequestDispatcher("/extrato").forward(request, response);
+//	}
     
     private void abrirFormCadastro(HttpServletRequest request, HttpServletResponse response)
     		throws ServletException, IOException {
     	int codigo_usuario = Integer.parseInt(request.getParameter("codigo_usuario"));
     	Usuario usuario = usuarioDao.buscar(codigo_usuario);
     	request.setAttribute("usuario", usuario);
-    	request.getRequestDispatcher("cadastro-conta.jsp").forward(request, response);
+    	request.getRequestDispatcher("conta.jsp").forward(request, response);
     }
 	
 	private void listar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Conta> lista = dao.listar();
+		Conta conta = (Conta) request.getAttribute("conta");
 		request.setAttribute("contas", lista);
-		request.getRequestDispatcher("lista-conta.jsp").forward(request, response);
+		request.setAttribute("conta", conta);
+		request.getRequestDispatcher("conta.jsp").forward(request, response);
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

@@ -139,13 +139,15 @@
 				</div>
 			</div>
 
-			<!-- Coluna para outras opções -->
 			<div class="col-md-12 text-center">
 				<div class="card mb-4">
 					<div class="card-header">Outras Opções</div>
 					<div class="card-body">
 						<a href="cartoes.jsp" class="btn btn-secondary btn-block mb-2">Cartões</a>
-						<a href="extrato.jsp" class="btn btn-secondary btn-block">Extrato</a>
+					 	<c:url value="/extrato" var="urlExtrato">
+		                	<c:param name="contaId" value="1" />
+	            		</c:url>
+			            <a href="${urlExtrato}" class="btn btn-primary btn-block">Extrato</a>
 					</div>
 				</div>
 			</div>
