@@ -10,12 +10,18 @@
     <meta name="author" content="">
     <link rel="icon" href="resources/images/logo.png">
     <link rel="stylesheet" href="resources/css/header.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/footer.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/cartoes.css">
+    <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!-- Bootstrap CSS principal -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
-          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-    <!-- Estilos personalizados -->
+<!--     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    
+    
+    <title>Fintech</title>
+  
+    
 </head>
 <body>
     <header>

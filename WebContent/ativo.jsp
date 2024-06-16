@@ -11,7 +11,7 @@
     <link rel="icon" href="resources/images/logo.png">
     <link rel="stylesheet" href="resources/css/ativo.css" type="text/css">
 
-    <title>Fintech</title>
+
 </head>
 
 <body>
@@ -24,6 +24,7 @@
         <div class="container mt-5 pt-5">
             <h1 class="text-center mb-4">Investimentos</h1>
             <div class="list-group">
+            
                 <a class="list-group-item list-group-item-action flex-column align-items-start">
                     <div class="d-flex w-100 justify-content-between">
                         <h4 class="mb-1">Renda Fixa</h4>
@@ -40,6 +41,7 @@
                     </div>
                     <p class="mt-2">Índice de retorno financeiro 4 / 5</p>
                 </a>
+                
                 <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
                     <div class="d-flex w-100 justify-content-between">
                         <h4 class="mb-1">Fundos Imobiliários</h4>
@@ -56,6 +58,7 @@
                     </div>
                     <p class="mt-2">Índice de retorno financeiro 3.9 / 5</p>
                 </a>
+                
                 <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
                     <div class="d-flex w-100 justify-content-between">
                         <h4 class="mb-1">Tesouro Direto</h4>
@@ -72,6 +75,7 @@
                     </div>
                     <p class="mt-2">Índice de retorno financeiro 3 / 5</p>
                 </a>
+                
                 <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
                     <div class="d-flex w-100 justify-content-between">
                         <h4 class="mb-1">Ações</h4>
@@ -88,6 +92,7 @@
                     </div>
                     <p class="mt-2">Índice de retorno financeiro 4 / 5</p>
                 </a>
+                
                 <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
                     <div class="d-flex w-100 justify-content-between">
                         <h4 class="mb-1">Fundos de Investimento</h4>
@@ -102,8 +107,9 @@
                         <span class="circle"></span>
                         <span class="circle-empty"></span>
                     </div>
-                    <p class="mt-2">Índice de retorno financeiro 4.1 / 5</p>
+                    <p class="mt-2">Índice de retorno financeiro 4.1 / 5</p>                    
                 </a>
+                
             </div>
         </div>
     </main>
