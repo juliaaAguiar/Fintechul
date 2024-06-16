@@ -1,6 +1,7 @@
 package br.com.fiap.fintech.controller;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -130,7 +131,9 @@ public class DepositoServlet extends HttpServlet {
     	try {
     		int codigo_conta = Integer.parseInt(request.getParameter("codigo_conta"));
         	Conta conta = contaDao.buscar(codigo_conta);
-			Date dataUtil = Date.parse(request.getParameter("data"));
+        	String dataStr = request.getParameter("data");
+			SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+			Date dataUtil = formato.parse(dataStr);
 			java.sql.Date data = new java.sql.Date(dataUtil.getTime());
 			double valor = Double.parseDouble(request.getParameter("valor"));
 			Deposito deposito = new Deposito(data, valor, conta);

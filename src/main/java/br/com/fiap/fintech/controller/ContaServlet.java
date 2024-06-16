@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.fiap.fintech.bean.Conta;
+import br.com.fiap.fintech.bean.Extrato;
 import br.com.fiap.fintech.bean.Usuario;
 import br.com.fiap.fintech.dao.ContaDAO;
 import br.com.fiap.fintech.dao.UsuarioDAO;
@@ -67,8 +68,9 @@ public class ContaServlet extends HttpServlet {
 			Conta conta = dao.buscar(codigo_conta);
 			Usuario usuario = usuarioDao.buscar(codigo_usuario);
 			Extrato extrato = dao.extrato(conta, usuario);
-			// request.setAttribute("conta", conta);
-			// request.setAttribute("usuario", usuario);
+			request.setAttribute("usuario", usuario);
+			request.setAttribute("conta", conta);
+			request.setAttribute("extrato", extrato);
 			request.getRequestDispatcher("extrato.jsp").forward(request, response);
 	}
     

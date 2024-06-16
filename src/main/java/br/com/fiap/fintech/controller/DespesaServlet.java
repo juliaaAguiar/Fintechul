@@ -1,6 +1,7 @@
 package br.com.fiap.fintech.controller;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -130,7 +131,9 @@ public class DespesaServlet extends HttpServlet {
     	try {
     		int codigo_cartao = Integer.parseInt(request.getParameter("codigo_cartao"));
         	Cartao cartao = cartaoDao.buscar(codigo_cartao);
-			Date dataUtil = Date.parse(request.getParameter("data"));
+        	String dataStr = request.getParameter("data");
+			SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+			Date dataUtil = formato.parse(dataStr);
 			java.sql.Date data = new java.sql.Date(dataUtil.getTime());
 			double valor = Double.parseDouble(request.getParameter("valor"));
 			Despesa despesa = new Despesa(data, valor, cartao);

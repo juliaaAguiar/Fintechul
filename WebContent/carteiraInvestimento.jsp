@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="resources/css/carteiraInvestimento.css" type="text/css">
     
-    <title>Fintech - Carteira de Investimentos</title>
+    <title>Fintech</title>
 </head>
 
 <body>
@@ -38,54 +38,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>10/06/2024</td>
-                            <td>Renda Fixa</td>
-                            <td>2</td>
-                            <td>R$ 1.000,00</td>
-                            <td>2.000,00</td>
-							<td>
-                                <button type="button" class="btn btn-info btn-sm">Alterar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>05/06/2024</td>
-                            <td>Fundos Imobiliários</td>
-                            <td>5</td>
-                            <td>R$ 500,00</td>
-                            <td>2.500,00</td>
-                            <td>
-                                <button type="button" class="btn btn-info btn-sm">Alterar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>05/06/2024</td>
-                            <td>Tesouro Direto</td>
-                            <td>2%</td>
-                            <td>R$ 100,00</td>
-                            <td>2.500,00</td>
-                            <td>
-                                <button type="button" class="btn btn-info btn-sm">Alterar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>05/06/2024</td>
-                            <td>Ações</td>
-                            <td>2</td>
-                            <td>R$ 3.500,00</td>
-                            <td>7.500,00</td>
-                            <td>
-                                <button type="button" class="btn btn-info btn-sm">Alterar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>05/06/2024</td>
-                            <td>Fundos de Investimento</td>
-                            <td>15</td>
-                            <td>R$ 90,00</td>
-                            <td>1.350,00</td>
-                            <td>
-                                <button type="button" class="btn btn-info btn-sm">Alterar</button>
-                            </td>
+<!--                             botão -->
                         </tr>	
                     </tbody>
                 </table>

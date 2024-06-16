@@ -29,18 +29,18 @@
         <div class="login-form text-center">
             <div class="form-group">
                 <label>Email</label>
-                <input type="text" class="form-control" placeholder="Email">
+                <input type="text" name="email" class="form-control" placeholder="Email">
             </div>
             <div class="form-group">
                 <label>CPF</label>
-                <input type="tel" class="form-control" placeholder="CPF" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
+                <input type="tel" name="cpf" class="form-control" placeholder="CPF" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
             </div>	
             <div class="form-group">
                 <label>Senha</label>
-                <input type="password" class="form-control" placeholder="Senha">
+                <input type="password" name="senha" class="form-control" placeholder="Senha">
             </div>
             <a href="index.jsp" class="btn custom-btn" style="background-color: #5a5a5a; border-color: #5a5a5a; color: white;">Acessar</a>
-            <a href="cadastrar.jsp" class="mt-3" style="color: black;">Cadastre-se</a>
+            <a href="cadastrarUsuario.jsp" class="mt-3" style="color: black;">Cadastre-se</a>
         </div>
     </div>
 </div>

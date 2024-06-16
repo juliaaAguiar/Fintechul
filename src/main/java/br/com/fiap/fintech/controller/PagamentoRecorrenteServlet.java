@@ -1,6 +1,7 @@
 package br.com.fiap.fintech.controller;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -68,8 +69,8 @@ public class PagamentoRecorrenteServlet extends HttpServlet {
 	
 	private void listar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<PagamentoRecorrente> lista = dao.listar();
-		request.setAttribute("pagamentosRecorrentes", lista);
-		request.getRequestDispatcher("extrato.jsp").forward(request, response);
+		request.setAttribute("pagamentosrecorrentes", lista);
+		request.getRequestDispatcher("conta.jsp").forward(request, response);
 	}
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -132,7 +133,9 @@ public class PagamentoRecorrenteServlet extends HttpServlet {
     	try {
     		int conta_id = Integer.parseInt(request.getParameter("codigo_conta"));
     		Conta conta = contaDao.buscar(conta_id);
-			Date dataUtil = Date.parse(request.getParameter("data"));
+			String dataStr = request.getParameter("data");
+			SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+			Date dataUtil = formato.parse(dataStr);
 			java.sql.Date data = new java.sql.Date(dataUtil.getTime());
 			String nome = request.getParameter("nome");
 			double valor = Double.parseDouble(request.getParameter("valor"));
