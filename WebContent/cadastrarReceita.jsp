@@ -28,17 +28,17 @@
                         	<input type="hidden" value="cadastrar" name="acao">
                         	
                             <div class="form-group">
-                                <label for="id-data">Data</label>
-                                <input type="date" class="form-control" id="id-data" required>
+                                <label for="data">Data</label>
+                                <input type="date" class="form-control" name="data" id="id-data" required>
                             </div>
                             <div class="form-group">
                                 <label for="descricao">Descrição</label>
-                                <input type="text" class="form-control" id="id-descricao" required>
+                                <input type="text" class="form-control" name="descricao" id="id-descricao" required>
                             </div>
                             
                             <div class="form-group">
                                 <label for="valor">Valor (R$)</label>
-                                <input type="number" class="form-control" id="id-valor" required>
+                                <input type="number" class="form-control" name="valor" id="id-valor" required>
                             </div>
                             <input type="submit" value="Registrar" class="btn btn-primary btn-block" style="background-color: #5a5a5a; border-color: #5a5a5a; color: white;">
                         </form>
