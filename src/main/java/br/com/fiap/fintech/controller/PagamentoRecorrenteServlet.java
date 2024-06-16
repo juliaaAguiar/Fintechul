@@ -1,6 +1,8 @@
 package br.com.fiap.fintech.controller;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -16,7 +18,7 @@ import br.com.fiap.fintech.dao.PagamentoRecorrenteDAO;
 import br.com.fiap.fintech.exception.DBException;
 import br.com.fiap.fintech.factory.DAOFactory;
 
-@WebServlet("/pagamentorecorrente")
+@WebServlet("/pagamentoRecorrente")
 public class PagamentoRecorrenteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -131,7 +133,9 @@ public class PagamentoRecorrenteServlet extends HttpServlet {
     	try {
     		int conta_id = Integer.parseInt(request.getParameter("codigo_conta"));
     		Conta conta = contaDao.buscar(conta_id);
-			java.util.Date dataUtil = new java.util.Date();
+			String dataStr = request.getParameter("data");
+			SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+			Date dataUtil = formato.parse(dataStr);
 			java.sql.Date data = new java.sql.Date(dataUtil.getTime());
 			String nome = request.getParameter("nome");
 			double valor = Double.parseDouble(request.getParameter("valor"));

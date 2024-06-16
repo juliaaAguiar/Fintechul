@@ -103,7 +103,6 @@ public class OracleDepositoDAO implements DepositoDAO {
 			
 			if (resultSet.next()) {
 				int codigo = resultSet.getInt("cd_conta");
-				int codigo_conta = resultSet.getInt("cd_login");
 				Date data = resultSet.getDate("dt_deposito");
 				double valor = resultSet.getInt("vl_deposito");
 				

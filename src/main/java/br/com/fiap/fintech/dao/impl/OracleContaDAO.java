@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.fiap.fintech.bean.Conta;
+import br.com.fiap.fintech.bean.Transacao;
 import br.com.fiap.fintech.dao.ContaDAO;
 import br.com.fiap.fintech.exception.DBException;
 import br.com.fiap.fintech.singleton.ConnectionManager;
@@ -107,7 +108,6 @@ public class OracleContaDAO implements ContaDAO {
 			if (resultSet.next()) {
 				int agencia = resultSet.getInt("nr_agencia");
 				int codigo = resultSet.getInt("cd_conta");
-				int codigo_usuario = resultSet.getInt("cd_login");
 				int numero = resultSet.getInt("nr_numero");
 				double saldo = resultSet.getDouble("nr_saldo");
 				String tipo = resultSet.getNString("ds_tipo");
@@ -162,4 +162,33 @@ public class OracleContaDAO implements ContaDAO {
 		}
 		return lista;
 	}
+	
+	@Override
+	public List<Transacao> extrato(int contaId) {
+	    List<Transacao> transacoes = new ArrayList<>();
+	    String sql = "SELECT 'DEPOSITO' AS tipo, dt_deposito AS data, vl_deposito AS valor FROM T_DEPOSITO WHERE cd_conta = ? " +
+	                 "UNION ALL " +
+	                 "SELECT 'DESPESA' AS tipo, dt_despesa AS data, vl_gasto AS valor FROM T_DESPESA WHERE cd_conta = ? " +
+	                 "ORDER BY data";
+
+	    try (Connection conexao = ConnectionManager.getInstance().getConnection();
+	         PreparedStatement statement = conexao.prepareStatement(sql)) {
+
+	        statement.setInt(1, contaId);
+	        statement.setInt(2, contaId);
+	        try (ResultSet resultSet = statement.executeQuery()) {
+	            while (resultSet.next()) {
+	                Transacao transacao = new Transacao();
+	                transacao.setTipo(resultSet.getString("tipo"));
+	                transacao.setData(resultSet.getDate("data"));
+	                transacao.setValor(resultSet.getDouble("valor"));
+	                transacoes.add(transacao);
+	            }
+	        }
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    } 
+	    return transacoes;
+	}
+
 }

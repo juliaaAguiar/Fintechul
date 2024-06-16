@@ -47,6 +47,9 @@ public class ContaServlet extends HttpServlet {
 		case "abrir-form-cadastro":
 			abrirFormCadastro(request, response);
 			break;
+//		case "extrato":
+//		extrato(request, response);
+//		break;
 		}	
 	}
     
@@ -55,21 +58,29 @@ public class ContaServlet extends HttpServlet {
 			int id = Integer.parseInt(request.getParameter("codigo"));
 			Conta conta = dao.buscar(id);
 			request.setAttribute("conta", conta);
-			request.getRequestDispatcher("edicao-conta.jsp").forward(request, response);
+			request.getRequestDispatcher("conta.jsp").forward(request, response);
 	}
+
+//	private void extrato(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//			int codigo_conta = Integer.parseInt(request.getParameter("codigo_conta"));
+//			request.setAttribute("contaId", codigo_conta);
+//			request.getRequestDispatcher("/extrato").forward(request, response);
+//	}
     
     private void abrirFormCadastro(HttpServletRequest request, HttpServletResponse response)
     		throws ServletException, IOException {
     	int codigo_usuario = Integer.parseInt(request.getParameter("codigo_usuario"));
     	Usuario usuario = usuarioDao.buscar(codigo_usuario);
     	request.setAttribute("usuario", usuario);
-    	request.getRequestDispatcher("cadastro-conta.jsp").forward(request, response);
+    	request.getRequestDispatcher("conta.jsp").forward(request, response);
     }
 	
 	private void listar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Conta> lista = dao.listar();
+		Conta conta = (Conta) request.getAttribute("conta");
 		request.setAttribute("contas", lista);
-		request.getRequestDispatcher("lista-conta.jsp").forward(request, response);
+		request.setAttribute("conta", conta);
+		request.getRequestDispatcher("conta.jsp").forward(request, response);
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
